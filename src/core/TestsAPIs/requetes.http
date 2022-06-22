@@ -1,0 +1,16 @@
+//ajout d'un étudiant
+POST http://localhost:8080/api/students
+Content-Type: application/json
+
+{
+        "Nom":"myName",
+        "Prenom":"myLastname",
+        "NumTel":354,
+        "Adresse":"00 myAdress",
+        "Promotion":"myPromotion"
+}
+
+###
+
+// recherche d'un étudiant en fonction de son identifiant
+GET http://localhost:8080/api/students/2
