@@ -6,7 +6,6 @@ import ListStudents from "@/components/Main/Students/ListStudents.vue";
 import ListLoan from "@/components/Main/Loan/ListLoan.vue";
 
 
-
 const routes = [
   {
     path: "/",
@@ -54,4 +53,6 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes,
 });
+
+
 export default router;

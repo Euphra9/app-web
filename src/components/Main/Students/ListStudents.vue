@@ -3,6 +3,7 @@ table, th, td {
   border: 1px solid black;
 }
 </style>
+
 <template>
   <p> Gestion des matériels </p>
   <router-link to="">Ajouter</router-link>

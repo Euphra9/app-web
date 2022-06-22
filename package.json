@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "cors": "^2.8.5",
     "vue": "^3.2.13",
     "vue-router": "^4.0.16"
   },
@@ -40,5 +41,23 @@
     "last 2 versions",
     "not dead",
     "not ie 11"
-  ]
+  ],
+  "keywords": [
+    "nodejs",
+    "express",
+    "mysql",
+    "restapi"
+  ],
+  "description": "## Project setup ``` npm install ```",
+  "main": "babel.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Euphra9/app-web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Euphra9/app-web/issues"
+  },
+  "homepage": "https://github.com/Euphra9/app-web#readme"
 }
