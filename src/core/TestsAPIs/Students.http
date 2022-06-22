@@ -1,0 +1,36 @@
+// affichage de l'ensemble des Etudiants
+GET http://localhost:8080/api/students
+
+###
+//ajout d'un étudiant
+POST http://localhost:8080/api/students
+Content-Type: application/json
+
+{
+        "Nom":"myName",
+        "Prenom":"myLastname",
+        "NumTel":354,
+        "Adresse":"00 myAdress",
+        "Promotion":"myPromotion"
+}
+
+###
+
+// recherche d'un étudiant en fonction de son identifiant
+GET http://localhost:8080/api/students/2
+
+###
+// modification d'un étudiant
+PUT http://localhost:8080/api/students/7
+Content-Type: application/json
+
+{
+        "Nom":"myName",
+        "Prenom":"myLastname",
+        "NumTel":34567890,
+        "Adresse":"00 myAdress",
+        "Promotion":"myPromotion"
+}
+###
+// suppression d'un étudiant
+DELETE http://localhost:8080/api/students/8
