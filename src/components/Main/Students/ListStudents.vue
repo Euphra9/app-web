@@ -1,7 +1,7 @@
 <template>
   <p> Gestion des matériels </p>
   <router-link to="">Ajouter</router-link>
-  <table id="firstTable">
+  <table id="firstTable" >
     <thead>
     <tr>
       <th>Identifiant</th>
@@ -11,30 +11,36 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>EL01</td>
-      <td>LUZOLO</td>
-      <td>Euphraim</td>
+    <tr v-for="student in students" :key="student.Identifiant">
+      <td>{{student.Identifiant}}</td>
+      <td>{{student.Nom}}</td>
+      <td>{{student.Prenom}}</td>
       <td>
         <button type="button"></button>
       </td>
     </tr>
-    <tr>
-      <td>RK02</td>
-      <td>KADI</td>
-      <td>Ratiba</td>
-      <td>
-        <button type="button"></button>
-      </td>
-    </tr>
-    <tr>
-      <td>ZM</td>
-      <td>ZEMRANI</td>
-      <td>Malak</td>
-      <td>
-        <button type="button"></button>
-      </td>
-    </tr>
+    
     </tbody>
   </table>
+ 
 </template>
+
+<script>
+import axios from 'axios';
+
+export default{
+  data(){
+    return {
+      students:{}
+    };
+  },
+  created(){ // pour les appels backend
+    axios.get('http://localhost:8081/api/students')
+    .then(response => this.students=response.data) // creation de la promesse
+    .catch()
+  },
+  mounted(){
+    console.log("ok");
+  }
+};
+</script>

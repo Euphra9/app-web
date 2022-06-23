@@ -1,5 +1,5 @@
 // affichage de l'ensemble des Etudiants
-GET http://localhost:8080/api/students
+GET http://localhost:8081/api/students
 
 ###
 //ajout d'un étudiant
