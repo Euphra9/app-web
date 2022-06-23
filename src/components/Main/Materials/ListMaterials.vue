@@ -1,8 +1,3 @@
-<style>
-table, th, td {
-  border: 1px solid black;
-}
-</style>
 <template>
   <p> Gestion des matériels </p>
       <form action="">
