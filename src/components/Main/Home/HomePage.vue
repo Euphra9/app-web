@@ -1,7 +1,8 @@
 <template>
   <NavBar msg="Nav"/>
+  <div class="mainBlock">
   <routerView></routerView>
-
+</div>
 
 
 

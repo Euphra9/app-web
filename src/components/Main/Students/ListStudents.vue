@@ -1,5 +1,4 @@
 <template>
- <div class="mainBlock">
    <p> Gestion des matériels </p>
   <router-link to="">Ajouter</router-link>
   <table id="firstTable" >
@@ -23,7 +22,6 @@
     
     </tbody>
   </table>
- </div>
  
 </template>
 
