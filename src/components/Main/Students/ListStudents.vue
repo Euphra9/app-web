@@ -1,6 +1,6 @@
 <template>
    <p> Gestion des matériels </p>
-  <router-link to="">Ajouter</router-link>
+  <router-link to="/etudiants/ajoutEtudiant">Ajouter</router-link>
   <table id="firstTable" >
     <thead>
     <tr>
@@ -22,7 +22,6 @@
     
     </tbody>
   </table>
- 
 </template>
 
 <script>
