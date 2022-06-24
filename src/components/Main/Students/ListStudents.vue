@@ -20,7 +20,7 @@
         <button><router-link v-bind:to="'/etudiants/'+student.Identifiant">Modifier</router-link></button>
       </td>
       <td>
-        <button> Supprimer </button>
+        <button  v-on:click="deleteStudent(student.Identifiant)"> Supprimer </button>
       </td>
     </tr>
     
@@ -34,6 +34,7 @@ import axios from 'axios';
 export default{
   data(){
     return {
+      id:this.$route.params.id,
       students:{}
     };
   },
@@ -44,6 +45,14 @@ export default{
   },
   mounted(){
     console.log("ok");
+  },
+  methods:{
+    deleteStudent:function(id){
+      axios.delete('http://localhost:8081/api/students/'+id)
+      .then(response => this.student=response.data) // creation de la promesse
+    .catch()
+    }
   }
+
 };
 </script>
