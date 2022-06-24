@@ -17,7 +17,7 @@ Content-Type: application/json
 ###
 
 // recherche d'un étudiant en fonction de son identifiant
-GET http://localhost:8080/api/students/2
+GET http://localhost:8081/api/students/2
 
 ###
 // modification d'un étudiant
