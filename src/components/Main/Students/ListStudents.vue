@@ -7,7 +7,8 @@
       <th>Identifiant</th>
       <th>Nom</th>
       <th>Prenom</th>
-      <th>Voir</th>
+      <th> </th>
+      <th></th>
     </tr>
     </thead>
     <tbody>
@@ -16,7 +17,10 @@
       <td>{{student.Nom}}</td>
       <td>{{student.Prenom}}</td>
       <td>
-        <button type="button"></button>
+        <button><router-link v-bind:to="'/etudiants/'+student.Identifiant">Modifier</router-link></button>
+      </td>
+      <td>
+        <button> Supprimer </button>
       </td>
     </tr>
     
@@ -34,7 +38,7 @@ export default{
     };
   },
   created(){ // pour les appels backend
-    axios.get('http://localhost:8081/api/students')
+    axios.get('http://localhost:8081/api/students/')
     .then(response => this.students=response.data) // creation de la promesse
     .catch()
   },

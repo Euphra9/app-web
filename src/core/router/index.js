@@ -5,6 +5,7 @@ import NavBar from "@/components/NavBar/NavBar.vue";
 import ListMaterials from "@/components/Main/Materials/ListMaterials.vue";
 import ListStudents from "@/components/Main/Students/ListStudents.vue";
 import AddStudent from "@/components/Main/Students/AddStudent.vue"
+import UpdateStudent from "@/components/Main/Students/UpdateStudent.vue";
 import ListLoan from "@/components/Main/Loan/ListLoan.vue";
 
 
@@ -41,6 +42,13 @@ const routes = [
         path: "/etudiants/ajoutEtudiant",
         name: "AddStudent",
         component: AddStudent
+
+      },
+
+      {
+        path: "/etudiants/:id",
+        name: "UpdateStudent",
+        component: UpdateStudent
 
       },
 
