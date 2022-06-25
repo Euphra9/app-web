@@ -7,7 +7,8 @@ import ListStudents from "@/components/Main/Students/ListStudents.vue";
 import AddStudent from "@/components/Main/Students/AddStudent.vue"
 import UpdateStudent from "@/components/Main/Students/UpdateStudent.vue";
 import ListLoan from "@/components/Main/Loan/ListLoan.vue";
-
+import Login from "@/components/Login/LoginPage.vue";
+import Welcome from "@/components/Login/WelcomePage.vue";
 
 const routes = [
   {
@@ -67,7 +68,19 @@ const routes = [
     name: "NavBar",
     component: NavBar,
     
-  }
+  },
+
+  {
+    path: "/",
+    name: "Welcom",
+    component: Welcome,
+  },
+
+  {
+    path: "/auth/login",
+    name: "Login",
+    component: Login,
+  },
 ];
 
 const router = createRouter({

@@ -13,9 +13,8 @@ app.use(express.urlencoded({ extended: true }));
 // simple route
 app.get("/", (req, res) => {
   res.json({ message: "Projet scolaire en developpement web" });
- 
-
 });
+
 // set port, listen for requests
 const PORT = process.env.PORT || 8081;
 require("./src/core/router/routes")(app);

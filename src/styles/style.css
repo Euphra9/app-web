@@ -47,14 +47,6 @@
   padding: 10px 75px;
 }
 
-.main {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 70%;
-  background: #EEEEEE;
-}
-
 .nav {
   display: flex;
   flex-direction: row;
@@ -80,18 +72,6 @@
   padding: 10px 25px;
 }
 
-.main .content {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin: auto;
-}
-
-.main .content p {
-  font-size: 1.25rem;
-  font-weight: 600;
-}
-
  table, th, td {
    border:1px solid black;
  }
@@ -108,8 +88,8 @@
  float: right;
  left: 24vw;
  top: 7vw;
- margin :0px ;
- padding :0px ;
+ margin :0 ;
+ padding :0 ;
  margin-left:6vw;
  z-index: 2;
 }
