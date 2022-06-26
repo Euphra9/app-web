@@ -1,24 +1,24 @@
 <template>
-  <div>
-    <h1>LOGIN</h1>
-    <form @submit.prevent="login">
-      <input v-model="username" placeholder="username"/>
-      <br/>
-      <br/>
-      <input v-model="password" placeholder="password" type="password"/>
-      <br/>
-      <br/>
-      <button type="submit">Login</button>
+  <title>Login</title>
+  <!-- the form awesome library is used to add icons to our form -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+
+  <body>
+  <div class="login">
+    <h1>Login</h1>
+
+    <form action="/auth/Login" method="post">
+      <label for="username">
+        <!-- font awesome icon -->
+        <i class="fas fa-user"></i>
+      </label>
+      <input type="text" name="username" placeholder="Username" id="username" required>
+      <label for="password">
+        <i class="fas fa-lock"></i>
+      </label>
+      <input type="password" name="password" placeholder="Password" id="password" required>
+      <input type="submit" value="Login">
     </form>
   </div>
+  </body>
 </template>
-<script>
-export default {
-  data: () => {
-    return {
-      username: "",
-      password: "",
-    };
-  },
-};
-</script>
