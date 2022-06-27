@@ -1,6 +1,6 @@
 <template>
-   <p> Gestion des matériels </p>
-  <router-link to="/etudiants/ajoutEtudiant">Ajouter</router-link>
+   <h1> Gestion des étudiants </h1>
+  <router-link to="/etudiants/ajoutEtudiant"><img alt="add" src="../../../assets/add.png"/></router-link>
   <table id="firstTable" >
     <thead>
     <tr>
@@ -18,10 +18,10 @@
       <td>{{student.Nom}}</td>
       <td>{{student.Prenom}}</td>
       <td>
-        <button><router-link v-bind:to="'/etudiants/'+student.Identifiant">Modifier</router-link></button>
+        <button class="btn_update"><router-link v-bind:to="'/etudiants/'+student.Identifiant" >Modifier</router-link></button>
       </td>
       <td>
-        <button  v-on:click="deleteStudent(student.Identifiant)"> Supprimer </button>
+        <button  v-on:click="deleteStudent(student.Identifiant)" class="btn_delete"> Supprimer </button>
       </td>
     </tr>
     
