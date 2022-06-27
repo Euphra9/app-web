@@ -1,12 +1,11 @@
 <template>
-  <main class="main">
+  <div class="headerBar">
     <nav class="nav">
-      <p class="logo">Logo</p>
+      <img id="logo" alt="loan" src="../../assets/logo.png"/>
       <div class="buttons">
-        <button class="button">Home</button>
+      <router-link to="/"><img alt="loan" src="../../assets/home.png"/></router-link>
         <button class="button">LogOut</button>
-        <p>HELOOOOOOOO</p>
       </div>
     </nav>
-  </main>
+  </div>
 </template>

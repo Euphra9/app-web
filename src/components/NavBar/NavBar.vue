@@ -1,7 +1,6 @@
 <template>
 
-  <div class="container">
-  <aside class="menu">
+  <div class="menu">
 
     <div class="profile">
       <img src="" alt="Profile Image" class="profile-img">
@@ -10,13 +9,13 @@
     </div>
 
     <div class="menu-items">
-      <button><p><router-link to="/pret">Prêt</router-link></p></button>
-      <button><p><router-link to="/materiels">Matériel</router-link></p></button>
-      <button><p><router-link to="/etudiants">Etudiant</router-link></p></button>
-      <button><p>Statistique</p></button>
+      <router-link to="/pret"><img alt="loan" src="../../assets/loan.png"/></router-link>
+    <router-link to="/materiels"><img alt="material" src="https://img.icons8.com/dotty/80/000000/computer.png"/></router-link>
+      <router-link to="/etudiants"> <img alt="students" src="../../assets/students.png"/></router-link>
+     <img alt="statistic" src="../../assets/statistic.png"/>
     </div>
-  </aside>
   </div>
+  
 
 
 </template>

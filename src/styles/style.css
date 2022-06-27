@@ -3,36 +3,43 @@
   padding: 0;
 }
 
-.container {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
+ /* HEADER */
+ .headerBar{
+  color: black;
+    position: absolute;
+    width: 82vw;
+    height: 8vw;
+    background-color: violet;
+    font-size: 2.5vw;
+    float: right;
+    left: 14vw;
+    top: 0vw;
+    margin :0px ;
+    padding :0px ;
+    margin-left:4vw;
+  }
+.headerBar #logo {
+  width: 5vw;
+  height: 5vw;
+  position: relative;
+  right: 35vw;
+  top:2vw;
 }
+/* NAVIGATION */
 
 .menu {
+  position: fixed;
+  top:0vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   height: 100vh;
-  width: 30%;
+  width: 20%;
   background-color: #6FA8DC;
 }
-
-.menu .profile-img {
-  width: 10rem;
-}
-
-.menu .profile-name {
-  font-size: 2rem;
-}
-
-.menu .profile-link {
-  font-size: 1.5rem;
-}
-
-.menu .menu-items {
+.menu-items{
   padding: 75px;
   display: flex;
   flex-direction: column;
@@ -40,76 +47,23 @@
   gap: 30px;
 }
 
-.menu-items p {
-  font-size: 2.5rem;
-  background: #FFFFFF;
-  border-radius: 10px;
-  padding: 10px 75px;
-}
-
-.main {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 70%;
-  background: #EEEEEE;
-}
-
-.nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 10vh;
-  width: 100%;
-  background-color: #FFFFFF;
-}
-
-.nav .logo {
-  font-size: 2rem;
-  padding: 0 20px;
-}
-
-.nav .buttons {
-  font-size: 2rem;
-  padding: 0 20px;
-}
-
-.buttons .button {
-  font-size: 1.25rem;
-  padding: 10px 25px;
-}
-
-.main .content {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin: auto;
-}
-
-.main .content p {
-  font-size: 1.25rem;
-  font-weight: 600;
-}
-
- table, th, td {
-   border:1px solid black;
- }
 
 
  /* LE BLOC CENTRAL */
  .mainBlock{
   color: black;
  position: fixed;
- width: 80vw;
+ width: 100vw;
  height: 100%;
  background-color: green;
  font-size: 2.5vw;
  float: right;
- left: 24vw;
- top: 7vw;
+ left: 14vw;
+ top: 8vw;
  margin :0px ;
  padding :0px ;
  margin-left:6vw;
  z-index: 2;
+ overflow-y: auto;
+max-height: 100vh;
 }
