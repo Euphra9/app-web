@@ -1,8 +1,9 @@
 <template>
 <h1> Ajout d'un étudiant </h1>
+<div class="scroll">
 <form >
     <div>
-        <label for="name">Nom :</label>
+        <label for="name">Nom </label>
         <input v-model="newstudent.name"  id="name" name="name" >
     </div>
     <div>
@@ -43,10 +44,11 @@
     </div>
 
     <div class="button">
-        <button v-on:click="addStudent">Ajouter un étudiant</button>
+        <button v-on:click="addStudent" class="btn_valide">Valider</button>
     </div>
    
 </form>
+</div>
 </template>
 
 <script>
