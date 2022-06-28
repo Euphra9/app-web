@@ -139,7 +139,7 @@ table,thead,td{
   border-color:#CD5C5C ;
 }
 
-.btn_update,.btn_valide{
+.btn_update,.btn_valide,.bouton_update{
   width: 10vw;
   height: 5vh;
   background-color: #6FA8DC;
@@ -159,36 +159,57 @@ a{
 .btn_valide{
   position: relative;
   top: 2vw;
-  left: 10vw;
+  left: -7vw;
   color:white;
+  z-index: 100;
 
 }
 label{
 	float: left;
   position: relative;
   top: 5vw;
-  left: 10vw;
+  left: 25vw;
   
+}
+.update form div{
+  margin: -2vw;
+  position: relative;
+  top: 2vw;
+}
+
+.bouton_update{
+  position: relative;
+  top: 7vw;
+  left: -7vw;
+  color:white;
+  z-index: 100;
+
 }
 
 input,select {
-  width: 10vw;
   padding: 10px 20px;
   margin: 8px 0;
   font-size: 1vw;
+  
+}
+input{
+  width: 10vw;
   position: relative;
-  top:5vw;
-  left:-10vw;
-  
-
-  
+  top:1vw;
+  left:0vw;
+}
+select{
+  position: relative;
+  top:1vw;
+  left:3.9vw;
+  width: 7vw;
 }
 
 
 form div{
-  margin: 3vw;
+  margin: 0vw;
   display: block;
-
+  
 }
 .scroll{
   overflow-y: auto;

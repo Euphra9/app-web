@@ -1,18 +1,18 @@
 <template>
 <h1> Ajout d'un étudiant </h1>
-<div class="scroll">
+<div class="">
 <form >
     <div>
-        <label for="name">Nom </label>
+        <label for="name">Nom </label> <br/>
         <input v-model="newstudent.name"  id="name" name="name" >
     </div>
     <div>
-        <label for="lastname">Prénom :</label>
+        <label for="lastname">Prénom </label><br/>
         <input  v-model="newstudent.lastname"  id="lastname" name="lastname">
     </div>
 
    <div>
-    <label for="promotion">Promotion :</label>
+    <label for="promotion">Promotion </label><br/>
     <select v-model="newstudent.class" id="promotion-class" name="promotion">
     <option value="init" selected> </option>
     <option value="L1">L1</option>
@@ -34,12 +34,12 @@
 
    </div>
      <div>
-        <label for="email">Email :</label>
+        <label for="email">Email </label><br/>
         <input  v-model="newstudent.email" type="email" id="email" name="email">
     </div>
 
      <div>
-        <label for="phonenum">Téléphone :</label>
+        <label for="phonenum">Téléphone </label><br/>
         <input v-model="newstudent.phonenum"  type="tel" id="phonenum" name="phonenum">
     </div>
 
