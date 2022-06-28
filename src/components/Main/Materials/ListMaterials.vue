@@ -1,10 +1,11 @@
 <template>
-  <p> Gestion des matériels </p>
+  <h1> Gestion des matériels </h1>
       <form action="">
         <input type="text" placeholder="Search.." name="search">
       </form>
-  <router-link to="">Ajouter</router-link>
-  <table id="firstTable">
+  <router-link to=""><img alt="add" src="../../../assets/add.png"/></router-link>
+  <div class="scroll">
+  <table id="listM">
     <thead>
     <tr>
       <th>Code barre</th>
@@ -14,16 +15,20 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>XTFDGD40</td>
-      <td>Ordinateur</td>
-      <td>PC HP 32GO</td>
+      <tr v-for="material in materials" :key="material.CodeBarre">
+      <td>{{material.CodeBarre}}</td>
+      <td>{{material.Nom}}</td>
+      <td>{{material.Description}}</td>
       <td>
-        <button type="button"></button>
+        <button class="btn_update"><router-link v-bind:to="'/materials/'+material.CodeBarre" >Modifier</router-link></button>
+      </td>
+      <td>
+        <button  v-on:click="deleteMaterial(student.Identifiant)" class="btn_delete"> Supprimer </button>
       </td>
     </tr>
     </tbody>
   </table>
+   </div>
 </template>
 
 <script>

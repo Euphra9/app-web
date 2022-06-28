@@ -125,7 +125,6 @@ table,thead,td{
   border-bottom: 1px solid #333;
   border-collapse:collapse;
   padding: 2vw;
-
   text-align: center;
 }
 
@@ -220,4 +219,14 @@ select{
 .scroll{
   overflow-y: auto;
   max-height: 100vh;
+}
+
+/*MATERIALS*/
+.listMaterials thead{
+  color:red;
+}
+#listM{
+  color:red;
+  font-size: 1.5vw;
+  padding: 0.5vw;
 }

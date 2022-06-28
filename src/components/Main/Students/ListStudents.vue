@@ -2,7 +2,7 @@
    <h1> Gestion des étudiants </h1>
   <router-link to="/etudiants/ajoutEtudiant"><img alt="add" src="../../../assets/add.png"/></router-link>
   <div class="scroll">
-  <table id="firstTable" >
+  <table class="listStudents">
     <thead>
     <tr>
       <th>Identifiant</th>
