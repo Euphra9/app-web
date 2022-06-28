@@ -8,8 +8,7 @@
       <th>Identifiant</th>
       <th>Nom</th>
       <th>Prenom</th>
-      <th> </th>
-      <th></th>
+        <th>Promotion</th>
     </tr>
     </thead>
     <tbody>
@@ -18,6 +17,7 @@
       <td>{{student.Identifiant}}</td>
       <td>{{student.Nom}}</td>
       <td>{{student.Prenom}}</td>
+       <td>{{student.Promotion}}</td>
       <td>
         <button class="btn_update"><router-link v-bind:to="'/etudiants/'+student.Identifiant" >Modifier</router-link></button>
       </td>

@@ -117,20 +117,21 @@ h1{
 .mainBlock table{
   position: relative;
   top:2vw;
-  left: 10vw;
-  font-size: 2vw;
+  left: 17vw;
+  font-size: 1.2vw;
+  column-width: 0.5vw;
 }
 
 table,thead,td{
   border-bottom: 1px solid #333;
   border-collapse:collapse;
-  padding: 2vw;
+  padding: 1vw;
   text-align: center;
 }
 
 .btn_delete{
-  width: 10vw;
-  height: 5vh;
+  width: 8vw;
+  height: 4vh;
   background-color: #CD5C5C;
   color:white;
   border-radius: 5px;
@@ -139,8 +140,8 @@ table,thead,td{
 }
 
 .btn_update,.btn_valide,.bouton_update{
-  width: 10vw;
-  height: 5vh;
+  width: 8vw;
+  height: 4vh;
   background-color: #6FA8DC;
   border-radius: 5px;
   font-size: 1vw;
@@ -222,11 +223,4 @@ select{
 }
 
 /*MATERIALS*/
-.listMaterials thead{
-  color:red;
-}
-#listM{
-  color:red;
-  font-size: 1.5vw;
-  padding: 0.5vw;
-}
+

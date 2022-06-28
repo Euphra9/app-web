@@ -5,13 +5,14 @@
       </form>
   <router-link to=""><img alt="add" src="../../../assets/add.png"/></router-link>
   <div class="scroll">
-  <table id="listM">
+  <table style="width: 3vw;">
     <thead>
     <tr>
       <th>Code barre</th>
       <th>Nom</th>
       <th>Description</th>
-      <th>Voir</th>
+      <th>Type</th>
+      
     </tr>
     </thead>
     <tbody>
@@ -19,6 +20,7 @@
       <td>{{material.CodeBarre}}</td>
       <td>{{material.Nom}}</td>
       <td>{{material.Description}}</td>
+      <td>{{material.Type}}</td>
       <td>
         <button class="btn_update"><router-link v-bind:to="'/materials/'+material.CodeBarre" >Modifier</router-link></button>
       </td>
