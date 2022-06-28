@@ -1,6 +1,7 @@
 <template>
    <h1> Gestion des étudiants </h1>
   <router-link to="/etudiants/ajoutEtudiant"><img alt="add" src="../../../assets/add.png"/></router-link>
+  <div class="scroll">
   <table id="firstTable" >
     <thead>
     <tr>
@@ -27,6 +28,7 @@
     
     </tbody>
   </table>
+  </div>
 </template>
 
 <script>

@@ -171,11 +171,17 @@ label{
   left: 25vw;
   
 }
+
 .update form div{
-  margin: -2vw;
   position: relative;
   top: 2vw;
+  font-size: 2vw;
 }
+.update input{
+  position: relative;
+  top:2vw;
+}
+
 
 .bouton_update{
   position: relative;
@@ -188,7 +194,7 @@ label{
 
 input,select {
   padding: 10px 20px;
-  margin: 8px 0;
+  margin: 0;
   font-size: 1vw;
   
 }
@@ -206,7 +212,7 @@ select{
 }
 
 
-form div{
+.add form div{
   margin: 0vw;
   display: block;
   

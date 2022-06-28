@@ -19,6 +19,7 @@ app.get("/", (req, res) => {
 // set port, listen for requests
 const PORT = process.env.PORT || 8081;
 require("./src/core/router/routes")(app);
+require("./src/core/router/MaterialsRoute")(app);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);

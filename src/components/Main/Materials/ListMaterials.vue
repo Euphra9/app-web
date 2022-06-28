@@ -25,3 +25,33 @@
     </tbody>
   </table>
 </template>
+
+<script>
+import axios from 'axios';
+
+export default{
+  data(){
+    return {
+      id:this.$route.params.id,
+      materials:{}
+    };
+  },
+  created(){ // pour les appels backend
+    axios.get('http://localhost:8081/api/materials/')
+    .then(response => this.materials=response.data) // creation de la promesse
+    .catch()
+  },
+  mounted(){
+    console.log("ok");
+  },
+  methods:{
+    deleteMaterial:function(id){
+      axios.delete('http://localhost:8081/api/materials/'+id)
+      .then(response => this.material=response.data) // creation de la promesse
+    .catch()
+    }
+  }
+
+};
+</script>
+

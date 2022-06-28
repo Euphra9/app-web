@@ -1,0 +1,33 @@
+// affichage de l'ensemble des Materiels
+GET http://localhost:8081/api/materials
+
+###
+//ajout d'un Materiel
+POST http://localhost:8081/api/materials
+Content-Type: application/json
+
+{
+        "CodeBarre":2346,
+        "Nom":"myName",
+        "Description":"myDescription",
+        "Type":"myType"
+}
+
+###
+
+// recherche d'un Materiel en fonction de son code barre
+GET http://localhost:8081/api/materials/3
+
+###
+// modification d'un Materiel
+PUT http://localhost:8081/api/materials/2346
+Content-Type: application/json
+
+{
+        "Nom":"mynewName",
+        "Description":"mynewDescription",
+        "Type":"mynType"
+}
+###
+// suppression d'un Materiel
+DELETE http://localhost:8081/api/materials/2346

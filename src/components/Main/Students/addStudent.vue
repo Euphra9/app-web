@@ -1,6 +1,6 @@
 <template>
 <h1> Ajout d'un étudiant </h1>
-<div class="">
+<div class="add">
 <form >
     <div>
         <label for="name">Nom </label> <br/>
