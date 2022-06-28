@@ -53,6 +53,5 @@ export default{
     .catch()
     }
   }
-
 };
 </script>

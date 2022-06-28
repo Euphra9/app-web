@@ -77,7 +77,7 @@ const routes = [
   },
 
   {
-    path: "/auth/login",
+    path: "/authLogin",
     name: "Login",
     component: Login,
   },
