@@ -1,0 +1,41 @@
+// affichage de l'ensemble des prets
+GET http://localhost:8081/api/loan
+
+###
+//ajout d'un pret
+POST http://localhost:8081/api/loan
+Content-Type: application/json
+
+{
+        "CodeBarre":2345,
+        "Motif":"myMotif",
+        "DatePret":"2020-04-01",
+        "DateRetour":"2022-04-01",
+        "DateRenduPrevue":"2021-04-01",
+        "Identifiant":1,
+        "NumResponsable":1
+
+}
+
+###
+
+// recherche d'un pret en fonction de son identifiant
+GET http://localhost:8081/api/loan/2
+
+###
+// modification d'un pret
+PUT http://localhost:8081/api/loan/2345
+Content-Type: application/json
+
+{
+        "Motif":"myNewMotif",
+        "DatePret":"2020-04-01",
+        "DateRetour":"2022-04-01",
+        "DateRenduPrevue":"2021-04-01",
+        "Identifiant":1,
+        "NumResponsable":1
+}
+
+###
+// suppression d'un pret
+DELETE http://localhost:8081/api/loan/2345

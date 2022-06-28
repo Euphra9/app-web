@@ -3,7 +3,7 @@ GET http://localhost:8081/api/students
 
 ###
 //ajout d'un étudiant
-POST http://localhost:8080/api/students
+POST http://localhost:8081/api/students
 Content-Type: application/json
 
 {
@@ -21,7 +21,7 @@ GET http://localhost:8081/api/students/2
 
 ###
 // modification d'un étudiant
-PUT http://localhost:8080/api/students/7
+PUT http://localhost:8081/api/students/7
 Content-Type: application/json
 
 {
@@ -33,4 +33,4 @@ Content-Type: application/json
 }
 ###
 // suppression d'un étudiant
-DELETE http://localhost:8080/api/students/8
+DELETE http://localhost:8081/api/students/8
