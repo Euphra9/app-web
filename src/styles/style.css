@@ -24,25 +24,21 @@ body{
     padding :0px ;
     margin-left:4vw;
   }
-.headerBar #logo {
-  width: 5vw;
-  height: 5vw;
+.divGauche p{
   position: relative;
-  right: 35vw;
-  top:2vw;
+  left:-25vw;
+  top:3vw;
+  font-size: 2vw;
 }
-.buttons{
+.divDroite button{
   position: relative;
-  top:-5vw;
   left:30vw;
+  font-size: 2vw;
+  background-color: white;
+  border: none;
+  
+}
 
-}
-.buttons img{
-  width: 4vw;
-  height: 4vw;
-  padding: 2vw;
-  margin: auto;
-}
 /* NAVIGATION */
 
 .menu {
@@ -59,11 +55,11 @@ body{
   z-index: 2;
 }
 .menu-items{
-  padding: 75px;
+  padding: 70px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 30px;
+  gap: 20px;
 }
 
 .menu img{
@@ -80,6 +76,10 @@ body{
   transform: scale(1.25);
 }
 
+.menu p{
+  position: relative;
+  
+}
 
 
  /* LE BLOC CENTRAL */
