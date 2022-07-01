@@ -2,7 +2,7 @@
   <h1> Gestion des matériels </h1>
    <div style="position:relative; left:-10vw; top:-2vw;">
   <input v-model="searchKey" type="search" placeholder="Saisir un code barre" name="search" id="searchBox">
-  <router-link to=""><img alt="add" src="../../../assets/add.png"/></router-link>
+  <router-link to="/materiels/ajoutMateriel"><img alt="add" src="../../../assets/add.png"/></router-link>
    </div>
 
   <table style="width: 3vw;"  class="listMaterials">
@@ -23,7 +23,7 @@
       <td>{{material.Description}}</td>
       <td>{{material.Type}}</td>
       <td>
-        <button class="btn_update"><router-link v-bind:to="'/materials/'+material.CodeBarre" >Modifier</router-link></button>
+        <button class="btn_update"><router-link v-bind:to="'/materiels/'+material.CodeBarre" >Modifier</router-link></button>
       </td>
       <td>
         <button  v-on:click="deleteMaterial(student.Identifiant)" class="btn_delete"> Supprimer </button>

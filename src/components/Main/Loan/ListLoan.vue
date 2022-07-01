@@ -1,6 +1,6 @@
 <template>
   <h1> Gestion des prêts </h1>
-  <router-link to=""><img alt="add" src="../../../assets/add.png"/></router-link>
+  <router-link to="/pret/ajoutPret"><img alt="add" src="../../../assets/add.png"/></router-link>
     <div class="scroll">
   <table style="width: 3vw;">
     <thead>
