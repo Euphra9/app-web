@@ -56,7 +56,7 @@ export default{
       
         return this.materials.filter((material)=>
         {
-           return material.CodeBarre.toString().toLowerCase().includes(this.searchKey.toLowerCase())
+           return (material.CodeBarre.toString().toLowerCase().includes(this.searchKey.toLowerCase())||material.Description.toLowerCase().includes(this.searchKey.toLowerCase()))
         })
       }
   },
