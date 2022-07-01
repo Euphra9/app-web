@@ -1,11 +1,11 @@
 <template>
   <h1> Gestion des matériels </h1>
-      <form action="">
-        <input type="text" placeholder="Search.." name="search">
-      </form>
+   <div style="position:relative; left:-10vw; top:-2vw;">
+  <input v-model="searchKey" type="search" placeholder="Saisir un code barre" name="search" id="searchBox">
   <router-link to=""><img alt="add" src="../../../assets/add.png"/></router-link>
-  <div class="scroll">
-  <table style="width: 3vw;">
+   </div>
+
+  <table style="width: 3vw;"  class="listMaterials">
     <thead>
     <tr>
       <th>Code barre</th>
@@ -15,8 +15,9 @@
       
     </tr>
     </thead>
+      <div class="scroll">
     <tbody>
-      <tr v-for="material in materials" :key="material.CodeBarre">
+      <tr v-for="material in search" :key="material.CodeBarre">
       <td>{{material.CodeBarre}}</td>
       <td>{{material.Nom}}</td>
       <td>{{material.Description}}</td>
@@ -29,8 +30,9 @@
       </td>
     </tr>
     </tbody>
+       </div>
   </table>
-   </div>
+
 </template>
 
 <script>
@@ -40,7 +42,8 @@ export default{
   data(){
     return {
       id:this.$route.params.id,
-      materials:{}
+      materials:[],
+      searchKey:""
     };
   },
   created(){ // pour les appels backend
@@ -48,8 +51,20 @@ export default{
     .then(response => this.materials=response.data) // creation de la promesse
     .catch()
   },
+  computed:{
+      search(){
+      
+        return this.materials.filter((material)=>
+        {
+           return material.CodeBarre.toString().toLowerCase().includes(this.searchKey.toLowerCase())
+        })
+      }
+  },
   mounted(){
-    console.log("ok");
+    console.log("Mounted");
+  },
+  update(){
+  
   },
   methods:{
     deleteMaterial:function(id){
