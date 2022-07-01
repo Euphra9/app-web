@@ -1,7 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-}
+
 body{
   overflow-x: hidden;
   background-size: 100% 100%;
@@ -13,36 +10,33 @@ body{
  .headerBar{
   color: black;
     position: absolute;
-    width: 82vw;
+    width: 78vw;
     height: 8vw;
     /*background-color: violet;*/
     font-size: 2.5vw;
     float: right;
-    left: 14vw;
+    left: 20vw;
     top: 0vw;
     margin :0px ;
     padding :0px ;
     margin-left:4vw;
   }
-.headerBar #logo {
-  width: 5vw;
-  height: 5vw;
+.divGauche p{
   position: relative;
-  right: 35vw;
-  top:2vw;
+  left:-25vw;
+  top:1.3vw;
+  font-size: 2vw;
 }
-.buttons{
+.divDroite button{
   position: relative;
-  top:-5vw;
-  left:30vw;
+  top:-4vw;
+  left:28vw;
+  font-size: 2vw;
+  background-color: white;
+  border: none;
+  
+}
 
-}
-.buttons img{
-  width: 4vw;
-  height: 4vw;
-  padding: 2vw;
-  margin: auto;
-}
 /* NAVIGATION */
 
 .menu {
@@ -59,11 +53,11 @@ body{
   z-index: 2;
 }
 .menu-items{
-  padding: 75px;
+  padding: 60px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 30px;
+  gap: 6px;
 }
 
 .menu img{
@@ -80,6 +74,10 @@ body{
   transform: scale(1.25);
 }
 
+.menu p{
+  position: relative;  
+  top:-1vw;
+}
 
 
  /* LE BLOC CENTRAL */
@@ -96,6 +94,7 @@ body{
  margin :0px ;
  padding :0px ;
  margin-left:6vw;
+
 }
 h1{
   position: relative;
@@ -117,17 +116,43 @@ h1{
 .mainBlock table{
   position: relative;
   top:2vw;
-  left: 17vw;
+  left: 11vw;
   font-size: 1.2vw;
   column-width: 0.5vw;
+
+/* Mettre flou
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);*/
 }
 
 table,thead,td{
   border-bottom: 1px solid #333;
   border-collapse:collapse;
-  padding: 1vw;
-  text-align: center;
+  padding: 2vw;
 }
+
+.listStudents th{
+  display: unset;
+  position: relative;
+  right: 13vw;
+  margin: auto;
+  padding-left: 4.3vw;
+
+}
+
+.listMaterials th{
+  display: unset;
+  position: relative;
+  right: 19vw;
+  margin: auto;
+  padding-left: 7vw;
+
+}
+
+
+
 
 .btn_delete{
   width: 8vw;
@@ -146,6 +171,7 @@ table,thead,td{
   border-radius: 5px;
   font-size: 1vw;
   border-color:#6FA8DC ;
+  color:white;
 
   
 }
@@ -218,9 +244,73 @@ select{
   
 }
 .scroll{
-  overflow-y: auto;
-  max-height: 100vh;
+  overflow-y: scroll;
+  max-height: 500px;
+  scroll-behavior: auto;
+  overflow-x: hidden;
+  
 }
 
-/*MATERIALS*/
+/*BOITE DE DIALOGUE*/
+.b_dialog{
+  position: relative;
+  top:-45vh;
+  left: 17vw;
+  width: 40vw;
+  height: 20vh;
+  z-index: 200;
+  border: 2vw;
+  background-color: white;
+  font-size: 1.5vw;
+  padding: 3vw;
 
+  
+}
+
+.b_dialog button{
+  position: relative;
+  top: 4vw;
+ 
+}
+
+.b_dialog .btn_update{
+  position: relative;
+  right: 3vw;
+
+}
+
+.b_dialog .btn_delete{
+  position: relative;
+  left: 3vw;
+
+}
+
+.b_confirmation{
+  position: relative;
+  top:-70vh;
+  left: 23vw;
+  width: 30vw;
+  z-index: 200;
+  border: 2vw;
+  background-color: white;
+  font-size: 1.5vw;
+  padding: 3vw;
+ 
+}
+
+.b_confirmation button{
+  position: relative;
+  top: 1.5vw;
+ 
+}
+
+#searchBox{
+  position: relative;
+  left: -20vw;
+  width: 20vw;
+}
+
+
+input:focus{
+  outline: 2px solid black;     /* oranges! yey */
+}
