@@ -2,74 +2,185 @@
   margin: 0;
   padding: 0;
 }
+body{
+  overflow-x: hidden;
+  background-size: 100% 100%;
+  font-family: Helvetica, serif;
 
-.container {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
 }
 
+ /* HEADER */
+ .headerBar{
+  color: black;
+    position: absolute;
+    width: 82vw;
+    height: 8vw;
+    /*background-color: violet;*/
+    font-size: 2.5vw;
+    float: right;
+    left: 14vw;
+    top: 0vw;
+    margin :0px ;
+    padding :0px ;
+    margin-left:4vw;
+  }
+.divGauche p{
+  position: relative;
+  left:-25vw;
+  top:3vw;
+  font-size: 2vw;
+}
+.divDroite button{
+  position: relative;
+  left:30vw;
+  font-size: 2vw;
+  background-color: white;
+  border: none;
+  
+}
+
+/* NAVIGATION */
+
 .menu {
+  position: fixed;
+  top:0vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   height: 100vh;
-  width: 30%;
+  width: 20%;
   background-color: #6FA8DC;
+  z-index: 2;
 }
-
-.menu .profile-img {
-  width: 10rem;
-}
-
-.menu .profile-name {
-  font-size: 2rem;
-}
-
-.menu .profile-link {
-  font-size: 1.5rem;
-}
-
-.menu .menu-items {
-  padding: 75px;
+.menu-items{
+  padding: 70px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 30px;
+  gap: 20px;
 }
 
-.menu-items p {
-  font-size: 2.5rem;
-  background: #FFFFFF;
-  border-radius: 10px;
-  padding: 10px 75px;
+.menu img{
+  width: 8vw;
+  height: auto;
+}
+
+.menu img:hover {
+  /* L'image est grossie de 25% */
+  -webkit-transform: scale(1.25); /* Safari et Chrome */
+  -moz-transform: scale(1.25); /* Firefox */
+  -ms-transform: scale(1.25); /* Internet Explorer 9 */
+  -o-transform: scale(1.25); /* Opera */
+  transform: scale(1.25);
+}
+
+.menu p{
+  position: relative;
+  
+}
+
+
+ /* LE BLOC CENTRAL */
+ .mainBlock{
+  color: black;
+ position: fixed;
+ width: 100vw;
+ height: 100%;
+ background-color: #DCDCDC;
+ font-size: 2.5vw;
+ float: right;
+ left: 14vw;
+ top: 8vw;
+ margin :0px ;
+ padding :0px ;
+ margin-left:6vw;
+}
+h1{
+  position: relative;
+  font-size: 2vw;
+  text-align: center;
+  left: -7vw;
+  top: 2vw;
+  z-index: 100;
+}
+
+.mainBlock img {
+  position: relative;
+  top:2vw;
+  left: 25vw;
+  width: 5vw;
+  height: 5vw;
 }
 
 .nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 10vh;
-  width: 100%;
-  background-color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+    background-color: #FFFFFF;
 }
 
-.nav .logo {
-  font-size: 2rem;
-  padding: 0 20px;
+.mainBlock table{
+  position: relative;
+  top:2vw;
+  left: 17vw;
+  font-size: 1.2vw;
+  column-width: 0.5vw;
 }
 
-.nav .buttons {
-  font-size: 2rem;
-  padding: 0 20px;
+table,thead,td{
+  border-bottom: 1px solid #333;
+  border-collapse:collapse;
+  padding: 1vw;
+  text-align: center;
+>>>>>>> devEuphra
 }
 
-.buttons .button {
-  font-size: 1.25rem;
-  padding: 10px 25px;
+.btn_delete{
+  width: 8vw;
+  height: 4vh;
+  background-color: #CD5C5C;
+  color:white;
+  border-radius: 5px;
+  font-size: 1vw;
+  border-color:#CD5C5C ;
+}
+
+.btn_update,.btn_valide,.bouton_update{
+  width: 8vw;
+  height: 4vh;
+  background-color: #6FA8DC;
+  border-radius: 5px;
+  font-size: 1vw;
+  border-color:#6FA8DC ;
+
+  
+}
+.btn_update a {
+  color:white;
+}
+a{
+  text-decoration: none;
+}
+
+.btn_valide{
+  position: relative;
+  top: 2vw;
+  left: -7vw;
+  color:white;
+  z-index: 100;
+
+}
+label{
+	float: left;
+  position: relative;
+  top: 5vw;
+  left: 25vw;
+  
 }
 
  table, th, td {
@@ -154,3 +265,57 @@ body {
     background-color: #2868c7;
     transition: background-color 0.2s;
 }
+
+.update form div{
+  position: relative;
+  top: 2vw;
+  font-size: 2vw;
+}
+.update input{
+  position: relative;
+  top:2vw;
+}
+
+
+.bouton_update{
+  position: relative;
+  top: 7vw;
+  left: -7vw;
+  color:white;
+  z-index: 100;
+
+}
+
+input,select {
+  padding: 10px 20px;
+  margin: 0;
+  font-size: 1vw;
+  
+}
+input{
+  width: 10vw;
+  position: relative;
+  top:1vw;
+  left:0vw;
+}
+select{
+  position: relative;
+  top:1vw;
+  left:3.9vw;
+  width: 7vw;
+}
+
+
+.add form div{
+  margin: 0vw;
+  display: block;
+  
+}
+.scroll{
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+/*MATERIALS*/
+
+>>>>>>> devEuphra

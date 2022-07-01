@@ -1,31 +1,34 @@
 <template>
-   <p> Gestion des matériels </p>
-  <router-link to="/etudiants/ajoutEtudiant">Ajouter</router-link>
-  <table id="firstTable" >
+   <h1> Gestion des étudiants </h1>
+  <router-link to="/etudiants/ajoutEtudiant"><img alt="add" src="../../../assets/add.png"/></router-link>
+  <div class="scroll">
+  <table class="listStudents">
     <thead>
     <tr>
       <th>Identifiant</th>
       <th>Nom</th>
       <th>Prenom</th>
-      <th> </th>
-      <th></th>
+        <th>Promotion</th>
     </tr>
     </thead>
     <tbody>
+    
     <tr v-for="student in students" :key="student.Identifiant">
       <td>{{student.Identifiant}}</td>
       <td>{{student.Nom}}</td>
       <td>{{student.Prenom}}</td>
+       <td>{{student.Promotion}}</td>
       <td>
-        <button><router-link v-bind:to="'/etudiants/'+student.Identifiant">Modifier</router-link></button>
+        <button class="btn_update"><router-link v-bind:to="'/etudiants/'+student.Identifiant" >Modifier</router-link></button>
       </td>
       <td>
-        <button  v-on:click="deleteStudent(student.Identifiant)"> Supprimer </button>
+        <button  v-on:click="deleteStudent(student.Identifiant)" class="btn_delete"> Supprimer </button>
       </td>
     </tr>
     
     </tbody>
   </table>
+  </div>
 </template>
 
 <script>

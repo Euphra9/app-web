@@ -1,22 +1,38 @@
 <template>
 
-  <div class="container">
-  <aside class="menu">
+  <div class="menu">
 
-    <div class="profile">
-      <img src="" alt="Profile Image" class="profile-img">
-      <p class="profile-name">Ratiba KADI</p>
-      <a href="" target="_blank" rel="noopener noreferrer" class="profile-link">Profile</a>
-    </div>
+
 
     <div class="menu-items">
-      <button><p><router-link to="/pret">Prêt</router-link></p></button>
-      <button><p><router-link to="/materiels">Matériel</router-link></p></button>
-      <button><p><router-link to="/etudiants">Etudiant</router-link></p></button>
-      <button><p>Statistique</p></button>
+
+      <div>
+             <router-link to="/"><img alt="loan" src="../../assets/logo.png"/></router-link>
+             <p> Accueil</p>
+           </div>
+
+
+     <div>
+       <router-link to="/pret"><img alt="loan" src="https://img.icons8.com/ios/100/000000/change.png"/></router-link>
+      <p> Prêts</p>
+     </div>
+   <div>
+     <router-link to="/materiels"><img alt="material" src="../../assets/materials.png"/></router-link>
+               <p> Materiels</p>
+   </div>
+
+      <div>
+        <router-link to="/etudiants"> <img alt="students" src="../../assets/students.png"/></router-link>
+           <p> Etudiants</p>
+      </div>
+
+    <div>
+       <img alt="statistic" src="../../assets/statistic.png"/>
+     <p> Statistique</p>
     </div>
-  </aside>
+    </div>
   </div>
+  
 
 
 </template>

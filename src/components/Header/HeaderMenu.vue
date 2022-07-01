@@ -1,9 +1,10 @@
 <template>
-    <nav class="nav">
-      <p class="logo">Logo</p>
-      <div class="buttons">
-        <button class="button">Home</button>
-        <button class="button">LogOut</button>
+  <div class="headerBar">
+      <div class="divGauche">
+        <p> Utilisateur : [Prénom Nom]</p>
       </div>
-    </nav>
+      <div class="divDroite">
+     <button> Se déconnecter</button>
+      </div>
+  </div>
 </template>
