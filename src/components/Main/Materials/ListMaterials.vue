@@ -5,7 +5,7 @@
   <router-link to="/materiels/ajoutMateriel"><img alt="add" src="../../../assets/add.png"/></router-link>
    </div>
 
-  <table style="width: 3vw;"  class="listMaterials">
+  <table style="width: 3vw;"  class="listMaterials" id="l_table">
     <thead>
     <tr>
       <th>Code barre</th>
@@ -26,12 +26,22 @@
         <button class="btn_update"><router-link v-bind:to="'/materiels/'+material.CodeBarre" >Modifier</router-link></button>
       </td>
       <td>
-        <button  v-on:click="deleteMaterial(student.Identifiant)" class="btn_delete"> Supprimer </button>
+        <button  v-on:click="deleteMaterial(material)" class="btn_delete"> Supprimer </button>
       </td>
     </tr>
     </tbody>
        </div>
   </table>
+
+    <div class="b_dialog" id="b_dialog" style="visibility:hidden;">
+     <p id="message">  </p>
+     <button class="btn_update" id="remove"> Confirmer </button>
+     <button class="btn_delete" id="retour" > Annuler </button>
+  </div>
+  <div class="b_confirmation" id="b_confirmation" style="visibility:hidden;">
+    <p id="messageOK"></p>
+    <button class="btn_update" id="ok"> Ok</button>
+  </div>
 
 </template>
 
@@ -67,10 +77,37 @@ export default{
   
   },
   methods:{
-    deleteMaterial:function(id){
-      axios.delete('http://localhost:8081/api/materials/'+id)
-      .then(response => this.material=response.data) // creation de la promesse
-    .catch()
+     deleteMaterial:function(material){
+    
+    document.getElementById("l_table").style.filter="blur(5px)";
+
+
+    document.getElementById("b_dialog").style.visibility="visible";
+    this.message="Etês-vous sur de vouloir supprimer "+material.Nom;
+    document.getElementById('message').innerHTML +=this.message;
+
+    document.getElementById('retour').onclick = function() {
+            location.reload();
+    };
+
+    document.getElementById('remove').onclick = function() {
+             axios.delete('http://localhost:8081/api/materials/'+material.CodeBarre)
+            .then(response => this.material=response.data) // creation de la promesse
+            .catch()
+
+
+  document.getElementById("b_dialog").style.visibility="hidden";
+  document.getElementById("b_confirmation").style.visibility="visible";
+    this.message=material.CodeBarre+" supprimé avec succès";
+    document.getElementById('messageOK').innerHTML =this.message;
+
+    document.getElementById('ok').onclick = function() {
+            location.reload();
+    };
+
+
+    };
+
     }
   }
 

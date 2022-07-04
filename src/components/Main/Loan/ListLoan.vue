@@ -17,6 +17,7 @@
       <td>{{formatageDate(loan.DatePret)}}</td>
       <td>{{this.materials[loan.CodeBarre]}}</td>
       <td>{{ this.students[loan.Identifiant]}}</td>
+      <td> {{recupEtat(loan.DateRenduPrevue)}}</td>
       <td>
         <button class="btn_update"><router-link v-bind:to="''+loan.CodeBarre" >Modifier</router-link></button>
       </td>
@@ -39,7 +40,8 @@ export default{
       id:this.$route.params.id,
       loans:{},
       students:{},
-      materials:{}
+      materials:{},
+      etat:{}
       
     };
   },
@@ -85,8 +87,15 @@ export default{
         return moment(date).format('DD/MM/YYYY');
     },
 
-    recupMaterial:function(id){
-      return id;
+    recupEtat:function(date){
+      var etat;
+      if(date==null){
+        etat="Non rendu";
+      }
+      else {
+        etat="Rendu";
+      }
+      return etat;
     }
 
   }
