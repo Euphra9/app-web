@@ -20,7 +20,7 @@
       <td>{{ this.students[loan.Identifiant]}}</td>
       <td> {{recupEtat(loan.DateRenduPrevue)}}</td>
       <td>
-        <button class="btn_update"><router-link v-bind:to="''+loan.CodeBarre" >Modifier</router-link></button>
+        <button class="btn_update"><router-link v-bind:to="'/pret/'+loan.CodeBarre" >Modifier</router-link></button>
       </td>
       
     </tr>
@@ -76,12 +76,6 @@ export default{
     .catch()
   },
   methods:{
-    deleteLoan:function(id){
-      axios.delete('http://localhost:8081/api/loan/'+id) // creation de la promesse 
-      .then(response => this.loan=response.data) // on extrait les données
-    .catch()
-    },
-
     formatageDate:function(date){
         return moment(date).format('DD/MM/YYYY');
     },
