@@ -5,7 +5,6 @@
   <table style="width: 3vw;">
     <thead>
       <tr>
-        <th>N°</th>
         <th>Date du prêt</th>
         <th>Matériel</th>
         <th>Preteur</th>
@@ -15,10 +14,9 @@
     </thead>
     <tbody>
       <tr v-for="loan in loans" :key="loan.CodeBarre">
-      <td>{{loan.CodeBarre}}</td>
       <td>{{formatageDate(loan.DatePret)}}</td>
-      <td>{{recupMaterial(loan.CodeBarre)}}</td>
-       <td>{{recupEtudiant(loan.Identifiant)}}</td>
+      <td>{{this.materials[loan.CodeBarre]}}</td>
+      <td>{{ this.students[loan.Identifiant]}}</td>
       <td>
         <button class="btn_update"><router-link v-bind:to="''+loan.CodeBarre" >Modifier</router-link></button>
       </td>
@@ -39,23 +37,42 @@ export default{
   data(){
     return {
       id:this.$route.params.id,
-      loans:{
-      },
-      students:[],
-      material:{}
+      loans:{},
+      students:{},
+      materials:{}
       
     };
   },
   created(){ // pour les appels backend
     axios.get('http://localhost:8081/api/loan/')
-    .then(response => this.loans=response.data) // creation de la promesse
+    .then(response => {
+      this.loans=response.data
+      // on recupère le nom de l'étudiant en fonction de son Nom
+      for(const loan of this.loans){
+           axios.get('http://localhost:8081/api/students/'+loan.Identifiant)
+          .then(response => {this.students[loan.Identifiant]=response.data
+
+            this.students[loan.Identifiant]=this.students[loan.Identifiant].Nom+" "+this.students[loan.Identifiant].Prenom;
+           console.log(this.students);
+          }) // creation de la promesse
+          .catch()    
+      }
+
+      // On recupère le nom du maétriel en fonction de son codeBarre
+
+    for(const loan of this.loans){
+           axios.get('http://localhost:8081/api/materials/'+loan.CodeBarre)
+          .then(response => {this.materials[loan.CodeBarre]=response.data
+
+          this.materials[loan.CodeBarre]=this.materials[loan.CodeBarre].Nom;
+          console.log(this.materials);
+          }) // creation de la promesse
+          .catch()    
+      }
+
+
+    }) // creation de la promesse
     .catch()
-
-  },
- mounted(){
-    
-
-    
   },
   methods:{
     deleteLoan:function(id){
@@ -70,16 +87,7 @@ export default{
 
     recupMaterial:function(id){
       return id;
-    },
-
-     recupEtudiant:function(id){
-       
-     
-     
-
-      return id;   
-      
-      }
+    }
 
   }
 
