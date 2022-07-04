@@ -13,12 +13,13 @@
         <i class="fas fa-user"></i>
       </label>
       <input type="text" name="username" placeholder="Username" id="username" v-model="username" required>
+
       <label for="password">
         <i class="fas fa-lock"></i>
       </label>
       <input type="password" name="password" placeholder="Password" id="password" v-model="pwd" required>
       <input v-on:click="verifyConnection()" type="submit" value="Login">
-      <p id ="error" style="visibility: hidden;">Password or login Incorrect</p>
+      <p id="error" style="visibility: hidden;">Password or login incorrect</p>
     </form>
   </div>
   </body>
@@ -26,7 +27,6 @@
 
 <script>
 import axios from 'axios';
-
 export default {
   data() {
     return {
@@ -42,17 +42,20 @@ export default {
   },
   methods: {
     verifyConnection: function () {
+
       console.log("STOP");
       for (let resp of this.responsables) {
         if (this.username === resp.AdresseMail && this.pwd === resp.MotDePAsse) {
           alert("---------> Login Successful")
-          break;
+          //location.reload();
+
+          this.$router.push('/');
+          //return res.redirect('/components/AppPage.vue')
         } else {
-          alert("---------> Password or login Incorrect")
-          break;
+          document.getElementById("error").style.visibility = "visible";
         }
       }
-    }
+    },
   }
 };
 

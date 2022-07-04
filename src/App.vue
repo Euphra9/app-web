@@ -1,5 +1,6 @@
 <template>
- <LoginPage msg="Login"/>
+ <LoginPage/>
+  
 </template>
 
 <script>

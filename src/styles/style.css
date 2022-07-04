@@ -1,4 +1,3 @@
-
 body{
   overflow-x: hidden;
   background-size: 100% 100%;
@@ -141,11 +140,8 @@ h1{
 table,thead,td{
   border-bottom: 1px solid #333;
   border-collapse:collapse;
-<<<<<<< HEAD
   padding: 1vw;
   text-align: center;
->>>>>>> devEuphra
-=======
   padding: 2vw;
 }
 
@@ -164,13 +160,7 @@ table,thead,td{
   right: 19vw;
    margin: auto;
   padding-left: 7vw;
-
-
->>>>>>> devEuphra
 }
-
-
-
 
 .btn_delete{
   width: 8vw;
@@ -260,6 +250,7 @@ body {
     font-size: 24px;
     padding: 20px 0 20px 0;
     border-bottom: 1px solid #dee0e4;
+    position: static;
 }
 .login form {
     display: flex;
@@ -275,6 +266,8 @@ body {
     height: 50px;
     background-color: #3274d6;
     color: #ffffff;
+    left: auto;
+    top: unset;
 }
 .login form input[type="password"], .login form input[type="text"] {
     width: 310px;
@@ -282,6 +275,8 @@ body {
     border: 1px solid #dee0e4;
     margin-bottom: 20px;
     padding: 0 15px;
+    left: 10px;
+    top: 0px;
 }
 .login form input[type="submit"] {
     width: 100%;
@@ -364,12 +359,6 @@ select{
   background-color: white;
   font-size: 1.5vw;
   padding: 3vw;
-
-<<<<<<< HEAD
->>>>>>> devEuphra
->>>>>>> devEuphra
-=======
-  
 }
 
 .b_dialog button{
@@ -426,4 +415,3 @@ textarea{
   width: 13vw;
   
 }
->>>>>>> devEuphra

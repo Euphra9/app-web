@@ -5,8 +5,6 @@
   <routerView></routerView>
 </div>
 
-
-
 </template>
 
 <script>

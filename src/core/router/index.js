@@ -9,14 +9,9 @@ import ListStudents from "@/components/Main/Students/ListStudents.vue";
 import AddStudent from "@/components/Main/Students/AddStudent.vue"
 import UpdateStudent from "@/components/Main/Students/UpdateStudent.vue";
 import ListLoan from "@/components/Main/Loan/ListLoan.vue";
-<<<<<<< HEAD
 import Login from "@/components/Login/LoginPage.vue";
-import Welcome from "@/components/Login/WelcomePage.vue";
-=======
 import AddLoan from "@/components/Main/Loan/AddLoan.vue";
 import UpdateLoan from "@/components/Main/Loan/UpdateLoan.vue";
-
->>>>>>> devEuphra
 
 const routes = [
   {
@@ -101,12 +96,6 @@ const routes = [
     name: "NavBar",
     component: NavBar,
     
-  },
-
-  {
-    path: "/",
-    name: "Welcom",
-    component: Welcome,
   },
 
   {
