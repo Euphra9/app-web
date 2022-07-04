@@ -1,17 +1,18 @@
 <template>
   <h1> Gestion des prêts </h1>
   <router-link to="/pret/ajoutPret"><img alt="add" src="../../../assets/add.png"/></router-link>
-    <div class="scroll">
-  <table style="width: 3vw;">
+  <table style="width: 3vw;" class="listLoans">
     <thead>
       <tr>
         <th>Date du prêt</th>
         <th>Matériel</th>
         <th>Preteur</th>
         <th>Etat</th>
-        <th>Voir</th>
+        <th></th>
       </tr>
     </thead>
+         <div class="scroll">
+
     <tbody>
       <tr v-for="loan in loans" :key="loan.CodeBarre">
       <td>{{formatageDate(loan.DatePret)}}</td>
@@ -21,13 +22,11 @@
       <td>
         <button class="btn_update"><router-link v-bind:to="''+loan.CodeBarre" >Modifier</router-link></button>
       </td>
-      <td>
-        <button  v-on:click="deleteLoan(student.Identifiant)" class="btn_delete"> Supprimer </button>
-      </td>
+      
     </tr>
     </tbody>
+    </div>
   </table>
-  </div>
 </template>
 
 <script>

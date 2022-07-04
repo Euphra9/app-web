@@ -150,6 +150,14 @@ table,thead,td{
    margin: auto;
   padding-left: 7vw;
 
+}
+
+.listLoans th{
+  display: unset;
+  position: relative;
+  right: 7vw;
+   margin: auto;
+  padding-left: 5.5vw;
 
 }
 
