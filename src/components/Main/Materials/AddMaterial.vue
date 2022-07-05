@@ -1,7 +1,6 @@
 <template>
 <h1> Ajout d'un produit  </h1>
 <div class="update">
-<form >
     <div>
      <label for="codeBarre">Code Barre </label> <br/>
       <input id="codeBarre" name="codeBarre" v-model="barcode" readonly>
@@ -48,9 +47,8 @@
    </div>
    
 
- <button class="bouton_update" >Valider </button>
+ <button class="bouton_update" @click="addMaterial" >Valider </button>
    
-</form>
 </div>
 
 
@@ -64,7 +62,15 @@ export default{
   data(){
     return {
       barcode:"",
-      suppliers:{}
+      suppliers:{},
+      newMaterial: [
+        {
+            codebarre:"",
+            Nom:"",
+            Description:"",
+            Type:""
+        },
+      ]
      
     };
   },
@@ -75,18 +81,21 @@ export default{
       var barcode=Math.random() * (max - min) + min;
       this.barcode=parseInt(barcode);
 
-
        axios.get('http://localhost:8081/api/materials/fournisseurs')
       .then(response => this.suppliers=response.data) // creation de la promesse
       .catch()
-
-
-  
 
   },
   mounted(){
     console.log("mounted");
   },
+    methods:{
+      addMaterial:function(){
+
+        console.log("--- Ajout Matériel --- ")
+      }
+
+    }
 
 
   

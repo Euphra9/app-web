@@ -5,7 +5,7 @@
 <form >
     <div>
      <label for="material">Materiel</label> <br/>
-     <select id="material" name="type">
+     <select id="material" name="type" v-model="newLoan.material">
      <option value="init" selected> </option>
      <option  v-for="material in availableMaterials" :key="material.CodeBarre"> 
          {{material.CodeBarre+" - "+material.Nom}}
@@ -17,36 +17,28 @@
 
    <div>
         <label for="student" >Preteur </label> <br/>
-        <select id="student" name="type">
+        <select id="student" name="type" v-model="newLoan.student">
             <option></option>
          <option  v-for="student in students" :key="student.Identifiant"> 
-         {{student.Nom}}   {{student.Prenom}}
+         {{student.Identifiant}} - {{student.Nom}}   {{student.Prenom}}
          </option>
     
     </select>
     </div>
 
      <div>
-        <label for="description">Description </label><br/>
-        <textarea></textarea>
+        <label for="description" >Description </label><br/>
+        <textarea v-model="newLoan.motif"></textarea>
        
     </div>
 
 
-   <div>
-    <label for="type">Type </label><br/>
-    <select id="type" name="type">
-    <option value="init" selected> </option>
-    <option value="info">Informatique</option>
-    <option value="elect">Electronique</option>
-    </select>
-   </div>
-   
+
    
 </form>
 </div>
 <div >
-        <button class="bouton_update" >Valider </button>
+        <button  @click="addLoan"  class="bouton_update" >Valider </button>
   </div>
 
 
@@ -54,11 +46,20 @@
 </template>
 <script>
 import axios from 'axios';
+import moment from 'moment';
+
 export default{
 data(){
     return {
         students:{},
-        availableMaterials:{}
+        availableMaterials:{},
+        newLoan: [
+        {
+            material:"",
+            student:"",
+            motif:""
+        },
+      ]
 
     }
 
@@ -73,7 +74,39 @@ created(){ // pour les appels backend
     .catch()
 
     
+  },
+  methods:{
+     addLoan:function(){
+        const idStudent = this.newLoan.student.split('-');
+        const idMaterial = this.newLoan.material.split('-');
+        const date= new Date();
+        
+
+        console.log("Materiel : "+this.newLoan.material);
+        console.log("Etudiant : "+this.newLoan.student);
+        console.log("Motif : "+this.newLoan.motif);
+        console.log("Date de l'emprunt : "+moment(date).format('DD/MM/YYYY'));
+
+    
+        console.log(idStudent[0]);
+        console.log(idMaterial[0]);
+
+        axios.post('http://localhost:8081/api/loan',{
+            "CodeBarre":idMaterial[0],
+            "Motif":this.newLoan.motif,
+            "DatePret":date,
+            "Identifian":idStudent[0],
+            "NumResponsable":1
+
+          })
+          .then(response => console.log(response)) // creation de la promesse
+          .catch()
+
+
+
+     }
   }
+  
 
 }
   

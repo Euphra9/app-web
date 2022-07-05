@@ -26,7 +26,7 @@ Loan.getAll = (result) => {
 };
 
 Loan.getAvailable=(result)=>{
-  let query="SELECT * FROM Materiel WHERE Materiel.CodeBarre NOT IN (SELECT CodeBarre FROM preter) OR Materiel.CodeBarre IN(SELECT CodeBarre FROM preter WHERE DateRetour IS NULL)";
+  let query="SELECT * FROM Materiel WHERE Materiel.CodeBarre NOT IN (SELECT CodeBarre FROM preter) OR Materiel.CodeBarre IN(SELECT CodeBarre FROM preter WHERE DateRetour IS NOT NULL)";
   sql.query(query, (err, res) => {
     if (err) {
       console.log("error: ", err);

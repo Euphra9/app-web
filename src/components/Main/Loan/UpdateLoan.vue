@@ -1,5 +1,5 @@
 <template>
-<h1> Modification du prêt réalisé par {{student.Prenom+" "+student.Nom}} </h1>
+<h1> Mis à jour du prêt réalisé par {{student.Prenom+" "+student.Nom}} </h1>
 
 <div class="update">
 <form >
