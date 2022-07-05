@@ -98,7 +98,7 @@ export default{
 
   document.getElementById("b_dialog").style.visibility="hidden";
   document.getElementById("b_confirmation").style.visibility="visible";
-    this.message=material.CodeBarre+" supprimé avec succès";
+    this.message=material.Nom+" supprimé avec succès";
     document.getElementById('messageOK').innerHTML =this.message;
 
     document.getElementById('ok').onclick = function() {

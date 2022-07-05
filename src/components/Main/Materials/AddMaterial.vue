@@ -108,8 +108,14 @@ export default{
          +"Mon fournisseur est "+this.newMaterial.Fournisseur[0]);
 
 
-      
-
+         axios.post('http://localhost:8081/api/materials',{
+            "CodeBarre":this.newMaterial.Codebarre,
+            "Nom":this.newMaterial.Nom,
+            "Description":this.newMaterial.Description,
+            "Type":this.newMaterial.Type,
+          })
+          .then(response => console.log(response)) // creation de la promesse
+          .catch()
 
 
 
@@ -117,8 +123,8 @@ export default{
 
       generateBarcode:function(){
 
-        const min=100000000000;
-        const max=999999999999;
+        const min=100000000;
+        const max=999999999;
         var barcode=Math.random() * (max - min) + min;
        this.newMaterial.Codebarre=parseInt(barcode);
       }
