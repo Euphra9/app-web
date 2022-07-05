@@ -1,5 +1,5 @@
 module.exports = app => {
-    const materials = require("../../Controller/MaterialsController.js");
+    const materials = require("../../../Controller/MaterialsController.js");
     var router = require("express").Router();
   
      // Retrieve all Materials

@@ -1,5 +1,5 @@
 module.exports = app => {
-    const loan = require("../../Controller/LoanController.js");
+    const loan = require("../../../Controller/LoanController.js");
     var router = require("express").Router();
   
      // Retrieve all loan

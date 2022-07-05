@@ -1,0 +1,2 @@
+// affichage de l'ensemble des Etudiants
+GET http://localhost:8081/api/supply
