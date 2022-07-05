@@ -1,4 +1,4 @@
-const sql = require("../core/services/connectionDB");
+const sql = require("../core/configBDD/connectionDB");
 // constructor
 const Supply = function(supply) {
   this.CodeBarre = supply.CodeBarre;

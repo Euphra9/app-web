@@ -1,4 +1,4 @@
-const sql = require("../core/services/connectionDB");
+const sql = require("../core/configBDD/connectionDB");
 
 const Responsable = function(responsable) {
     this.Nom = responsable.Nom;

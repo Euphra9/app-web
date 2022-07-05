@@ -1,4 +1,4 @@
-const sql = require("../core/services/connectionDB");
+const sql = require("../core/configBDD/connectionDB");
 // constructor
 const Loan = function(loan) {
   this.CodeBarre = loan.CodeBarre;
