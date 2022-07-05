@@ -40,9 +40,10 @@
    <div>
       <label for="fournisseur" >Fournisseur </label> <br/>
       <select id="fournisseur" name="type">
-    <option value="init" selected> </option>
-    <option value="info">Fournisseur1</option>
-    <option value="elect">Fournisseur2</option>
+      <option></option>
+         <option  v-for="supplier in suppliers" :key="supplier.NumFournisseur"> 
+         {{supplier.Nom}}
+         </option>
     </select>
    </div>
    
@@ -56,40 +57,39 @@
 </template>
 
 <script>
+import axios from 'axios';
 
 export default{
+  
   data(){
     return {
       barcode:"",
+      suppliers:{}
      
     };
   },
   created(){ // pour les appels backend
-
       console.log("created");
       const min=100000000000;
       const max=999999999999;
       var barcode=Math.random() * (max - min) + min;
       this.barcode=parseInt(barcode);
+
+
+       axios.get('http://localhost:8081/api/materials/fournisseurs')
+      .then(response => this.suppliers=response.data) // creation de la promesse
+      .catch()
+
+
   
-    
+
   },
   mounted(){
     console.log("mounted");
   },
-  methods:{
-   //  generateBC:function(){
-   //    const min=100000000000;
-   //    const max=999999999999;
-   //    var barcode=Math.random() * (max - min) + min;
-   //    this.barcode=parseInt(barcode);
-   //    document.getElementById('codeBarre').setAttribute('value', this.barcode);
-   //    console.log("Code Barre :"+parseInt(barcode));
-    
 
-   //  }
 
-  }
+  
 
 };
 </script>

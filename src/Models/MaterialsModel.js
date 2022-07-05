@@ -21,6 +21,19 @@ Material.getAll = (result) => {
   });
 };
 
+Material.getAllSupplier = (result) => {
+  let query = "SELECT * FROM Fournisseur";
+  sql.query(query, (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(null, err);
+      return;
+    }
+    console.log("materials: ", res);
+    result(null, res);
+  });
+};
+
 
 Material.create = (newMaterial, result) => {
   sql.query("INSERT INTO Materiel SET ?", newMaterial, (err, res) => {

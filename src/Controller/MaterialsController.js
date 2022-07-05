@@ -104,3 +104,16 @@ exports.findOne = (req, res) => {
     });
   };
 
+
+  // Retrieve all supplier from the database (with condition).
+exports.findAllSupplier = (req, res) => {
+  Material.getAllSupplier((err, data) => {
+  if (err)
+    res.status(500).send({
+      message:
+        err.message || "Some error occurred while retrieving students."
+    });
+  else res.send(data);
+});
+};
+
