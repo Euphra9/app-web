@@ -121,6 +121,19 @@ export default{
         this.promotion.spec.toUpperCase();
 
 
+           axios.put('http://localhost:8081/api/students/'+this.id,
+           {
+            "Nom":this.student.Nom,
+            "Prenom":this.student.Prenom,
+            "NumTel":this.student.NumTel,
+            "Adresse":this.student.Adresse,
+            "Promotion":promotion
+
+          })
+
+
+          .then(response => console.log(response)) // creation de la promesse
+          .catch()
          alert("Mon nom est "+this.student.Nom+"\n"
          +"Mon prenom est "+this.student.Prenom+"\n"
          +"Ma promotion est "+promotion+"\n"
