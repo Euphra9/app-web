@@ -118,6 +118,16 @@ export default{
           .catch()
 
 
+          axios.post('http://localhost:8081/api/supply',{
+            "CodeBarre":this.newMaterial.Codebarre,
+            "DateAchat":this.newMaterial.DateAchat,
+            "PrixAchat":this.newMaterial.Prix,
+            "NumFournisseur":this.newMaterial.Fournisseur[0],
+          })
+          .then(response => console.log(response)) // creation de la promesse
+          .catch()
+
+
 
       },
 
