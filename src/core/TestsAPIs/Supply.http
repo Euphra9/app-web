@@ -19,3 +19,14 @@ GET http://localhost:8081/api/supply/1
 ###
 // recherche d'une livraison  en fonction de son identifiant
 GET http://localhost:8081/api/supply/supplier/1
+
+###
+// modification d'une livraison
+PUT http://localhost:8081/api/supply/4
+Content-Type: application/json
+
+{
+        "DateAchat":"2002-06-12",
+        "PrixAchat":500,
+        "NumFournisseur":1
+}

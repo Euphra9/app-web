@@ -14,6 +14,9 @@ router.get("/:id", supply.findOneSupply);
 
 // Retrieve a single supplier with id
 router.get("/supplier/:id", supply.findOneSupplier);
+
+// Update a supply with id
+router.put("/:id", supply.update);
     
 app.use('/api/supply', router);
   };

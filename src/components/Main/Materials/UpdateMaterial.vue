@@ -55,7 +55,7 @@
 </form>
 </div>
 <div >
-        <button class="bouton_update" v-on:click="onValid()" >Valider </button>
+        <button class="bouton_update" @click="updateMaterial" >Valider </button>
   </div>
 
 
@@ -116,9 +116,29 @@ export default{
   },
 
    methods :{
-    onValid: function(){
-      let nname = document.getElementById('newname').value
-      this.student.Nom = nname
+    updateMaterial: function(){
+    //this.supplier.Fournisseur=this.supplier.Fournisseur.split('-');
+
+
+    axios.put('http://localhost:8081/api/material/'+this.id,
+           {
+             "Nom":this.material.Nom,
+             "Description":this.material.Description,
+             "Type":this.material.Type
+          })
+
+
+
+     alert("Mon code est "+this.material.CodeBarre+"\n"
+         +"Mon Nom est "+this.material.Nom+"\n"
+         +"Ma Description est "+this.material.Description+"\n"
+         +"Mon type est "+this.material.Type+"\n"
+         +"Mon prix est "+this.supply.PrixAchat+"\n"
+         +"Ma Date est "+this.supply.DateAchat+"\n"
+         +"Mon fournisseur est "+this.supplier.NumFournisseur);
+
+
+
     }
   }
 

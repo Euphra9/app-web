@@ -5,8 +5,6 @@ module.exports = app => {
      // Retrieve all Materials
   router.get("/", materials.findAll);
 
-// Retrieve all Suppliers
-router.get("/fournisseurs", materials.findAllSupplier);
 
     // Create a new Material
   router.post("/", materials.create);

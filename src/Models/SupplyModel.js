@@ -72,4 +72,25 @@ Supply.findSupplierById = (id, result) => {
 };
 
 
+Supply.updateById = (CodeBarre, supply, result) => {
+  sql.query(
+    "UPDATE fournir SET DateAchat = ?, PrixAchat = ?, NumFournisseur = ? WHERE CodeBarre = ?",
+    [supply.DateAchat, supply.PrixAchat,supply.NumFournisseur, CodeBarre],
+    (err, res) => {
+      if (err) {
+        console.log("error: ", err);
+        result(null, err);
+        return;
+      }
+      if (res.affectedRows == 0) {
+        // not found Supply with the id
+        result({ kind: "not_found" }, null);
+        return;
+      }
+      console.log("updated supply: ", {supply});
+      result(null, {supply});
+    }
+  );
+};
+
 module.exports = Supply;

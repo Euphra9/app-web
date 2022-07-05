@@ -3,11 +3,6 @@ GET http://localhost:8081/api/materials
 
 ###
 
-// affichage de l'ensemble des fournisseurs
-GET http://localhost:8081/api/materials/fournisseurs
-
-###
-
 
 //ajout d'un Materiel
 POST http://localhost:8081/api/materials
