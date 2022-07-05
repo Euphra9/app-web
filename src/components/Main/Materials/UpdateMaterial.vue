@@ -127,6 +127,13 @@ export default{
              "Type":this.material.Type
           })
 
+      axios.put('http://localhost:8081/api/supply/'+this.id,
+           {
+            "DateAchat":this.supply.DateAchat,
+            "PrixAchat":this.supply.PrixAchat,
+            "NumFournisseur":this.supplier.NumFournisseur
+          })
+
 
 
      alert("Mon code est "+this.material.CodeBarre+"\n"
