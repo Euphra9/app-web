@@ -79,7 +79,7 @@ created(){ // pour les appels backend
      addLoan:function(){
         const idStudent = this.newLoan.student.split('-');
         const idMaterial = this.newLoan.material.split('-');
-        const date= new Date();
+        let date= new Date();
         
 
         console.log("Materiel : "+this.newLoan.material);
@@ -90,12 +90,13 @@ created(){ // pour les appels backend
     
         console.log(idStudent[0]);
         console.log(idMaterial[0]);
+        date=moment(date).format('YYYY-MM-DD');
 
         axios.post('http://localhost:8081/api/loan',{
             "CodeBarre":idMaterial[0],
             "Motif":this.newLoan.motif,
             "DatePret":date,
-            "Identifian":idStudent[0],
+            "Identifiant":idStudent[0],
             "NumResponsable":1
 
           })
