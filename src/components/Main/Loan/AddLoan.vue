@@ -20,7 +20,7 @@
         <select id="student" name="type">
             <option></option>
          <option  v-for="student in students" :key="student.Identifiant"> 
-         {{student.Nom}}
+         {{student.Nom}}   {{student.Prenom}}
          </option>
     
     </select>
@@ -67,6 +67,11 @@ created(){ // pour les appels backend
     axios.get('http://localhost:8081/api/loan/dispo')
     .then(response => this.availableMaterials=response.data) // creation de la promesse
     .catch()
+
+    axios.get('http://localhost:8081/api/students')
+    .then(response => this.students=response.data) // creation de la promesse
+    .catch()
+
     
   }
 
