@@ -25,6 +25,27 @@ Loan.getAll = (result) => {
   });
 };
 
+Loan.getAvailable=(result)=>{
+  let query="SELECT * FROM Materiel WHERE Materiel.CodeBarre NOT IN (SELECT CodeBarre FROM preter) OR Materiel.CodeBarre IN(SELECT CodeBarre FROM preter WHERE DateRetour IS NULL)";
+  sql.query(query, (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(null, err);
+      return;
+    }
+    console.log("loan: ", res);
+    result(null, res);
+  });
+
+  };
+
+
+/*
+SELECT * FROM All 
+WHERE 
+All.CP NOT IN (SELECT CP FROM B)
+ */
+
 
 Loan.create = (newLoan, result) => {
   sql.query("INSERT INTO preter SET ?", newLoan, (err, res) => {

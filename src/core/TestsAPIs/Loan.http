@@ -2,16 +2,20 @@
 GET http://localhost:8081/api/loan
 
 ###
+
+// affichage de l'ensemble des mat dispo
+GET http://localhost:8081/api/loan/dispo
+
+
+###
 //ajout d'un pret
 POST http://localhost:8081/api/loan
 Content-Type: application/json
 
 {
-        "CodeBarre":2345,
+        "CodeBarre":5,
         "Motif":"myMotif",
         "DatePret":"2020-04-01",
-        "DateRetour":"2022-04-01",
-        "DateRenduPrevue":"2021-04-01",
         "Identifiant":1,
         "NumResponsable":1
 

@@ -5,6 +5,9 @@ module.exports = app => {
      // Retrieve all loan
   router.get("/", loan.findAll);
 
+  // get all materials available
+  router.get("/dispo",loan.availableAll);
+
     // Create a new loan
   router.post("/", loan.create);
 

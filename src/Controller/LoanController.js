@@ -12,7 +12,17 @@ exports.findAll = (req, res) => {
   });
 };
 
-
+// avaible material
+exports.availableAll=(req,res)=>{
+  Loan.getAvailable((err, data) => {
+    if (err)
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving loan."
+      });
+    else res.send(data);
+  });
+}
 // Create and Save a new Loan
 exports.create = (req, res) => {
   // Validate request

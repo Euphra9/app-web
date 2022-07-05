@@ -7,7 +7,7 @@ POST http://localhost:8081/api/materials
 Content-Type: application/json
 
 {
-        "CodeBarre":2346,
+        "CodeBarre":5,
         "Nom":"myName",
         "Description":"myDescription",
         "Type":"myType"
