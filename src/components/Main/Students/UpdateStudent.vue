@@ -1,5 +1,5 @@
 <template>
-<h1> Modification de l'étudiant :  {{student.Nom}} {{student.Prenom}} </h1>
+<h1> Modification de l'étudiant :  {{identity.name}} {{student.Prenom}} </h1>
 
 <div class="update">
 <form >
@@ -10,56 +10,56 @@
 
    <div>
         <label for="newname" >Nom </label> <br/>
-        <input type="text" id="newname" name="newname" :value="student.Nom">
+        <input type="text" id="newname" name="newname" v-model="student.Nom">
     </div>
 
      <div>
         <label for="lastname">Prénom </label><br/>
-        <input id="lastname" name="lastname" :value="student.Prenom">
+        <input id="lastname" name="lastname" v-model="student.Prenom">
     </div>
 
 
    <div>
     <label for="promotion">Promotion </label><br/>
-    <select id="promotion-class" name="promotion">
-    <option value="init" selected> </option>
-    <option value="L1">L1</option>
-    <option value="L2">L2</option>
-    <option value="L3">L3</option>
-    <option value="M1">M1</option>
-    <option value="M2">M2</option>  
+    <select id="promotion-class" name="promotion" v-model="promotion.class">
+    <option selected> </option>
+    <option >L1</option>
+    <option >L2</option>
+    <option >L3</option>
+    <option >M1</option>
+    <option >M2</option>  
     </select>
-    <select id="promotion-cursus" name="promotion">
-    <option value="init" selected> </option>
-    <option value="normale">INIT</option>
-    <option value="app">APP</option>
+    <select id="promotion-cursus" name="promotion" v-model="promotion.cursus">
+    <option selected> </option>
+    <option >INIT</option>
+    <option >APP</option>
     </select>
-    <select  id="promotion-spec" name="promotion">
-    <option value="init" selected> </option>
-    <option value="lsi">LSI</option>
-    <option value="rs">RS</option>
+    <select  id="promotion-spec" name="promotion" v-model="promotion.spec">
+    <option selected> </option>
+    <option >LSI</option>
+    <option >RS</option>
     </select>
 
    </div>
 
     <div>
         <label for="email">Email </label><br/>
-        <input type="email" id="email" name="email" :value="student.Adresse">
+        <input type="email" id="email" name="email" v-model="student.Adresse">
     </div>
 
     <div>
         <label for="phonenum">Téléphone </label><br/>
-        <input type="tel" id="phonenum" name="phonenum" :value="student.NumTel">
+        <input type="tel" id="phonenum" name="phonenum" v-model="student.NumTel">
     </div>
    
 
-
+<div >
+        <button class="bouton_update" @click="updateStudent" >Valider </button>
+  </div>
    
 </form>
 </div>
-<div >
-        <button class="bouton_update" v-on:click="onValid()" >Valider </button>
-  </div>
+
 
 
 
@@ -73,40 +73,63 @@ export default{
     return {
       id:this.$route.params.id,
       student:{},
-      name: this.student,
-      newname : "",
-      updateStudent: [
-        {
-            name:"Hello",
-            lastname:"",
-            class:"",
-            cursus:"",
-            spec:"",
-            phonenum:"",
-            email:""
-        }
-      ],
-      
+      identity:{
+        name:"",
+        lastname:""
+      },
+      promotion:{
+        class:"",
+        cursus:"",
+        spec:""
+      },
     };
   },
-  methods :{
-    onValid: function(){
-      let nname = document.getElementById('newname').value
-      this.student.Nom = nname
-    }
-  },
+
 
   created(){ // pour les appels backend
 
     axios.get('http://localhost:8081/api/students/'+this.id)
-    .then(response => this.student=response.data) // creation de la promesse
+    .then(response => {
+      this.student=response.data
+      this.student.Promotion=this.student.Promotion.split('-');
+      this.promotion.class=this.student.Promotion[0]
+      this.promotion.cursus=this.student.Promotion[1]
+      this.promotion.spec=this.student.Promotion[2]
+      this.identity.name=this.student.Nom;
+      this.identity.lastname=this.student.Prenom
+      
+      }) // creation de la promesse
     .catch()
+
+
+
    
   },
 
   mounted(){
     console.log("ok");
-  }
+  },
+
+  methods :{
+       updateStudent:function(){
+
+
+
+        
+        var promotion=this.promotion.class+"-"+
+        this.promotion.cursus.toUpperCase()+"-"+
+        this.promotion.spec.toUpperCase();
+
+
+         alert("Mon nom est "+this.student.Nom+"\n"
+         +"Mon prenom est "+this.student.Prenom+"\n"
+         +"Ma promotion est "+promotion+"\n"
+         +"Mon numéro est "+this.student.NumTel+"\n"
+         +"Mon mail est "+this.student.Adresse);
+        
+       }
+
+  },
 
 
 };
