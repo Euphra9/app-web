@@ -22,5 +22,17 @@ Supply.getAllSupplier = (result) => {
   });
 };
 
+Supply.createSupply = (newSuppli, result) => {
+  sql.query("INSERT INTO fournir SET ?", newSuppli, (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(err, null);
+      return;
+    }
+    console.log("created supply: ", { id: res.insertCodeBarre, ...newSuppli });
+    result(null, { id: res.insertCodeBarre, ...newSuppli });
+  });
+};
+
 
 module.exports = Supply;

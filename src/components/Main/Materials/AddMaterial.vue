@@ -87,7 +87,7 @@ export default{
       console.log("created");
       
 
-       axios.get('http://localhost:8081/api/materials/fournisseurs')
+       axios.get('http://localhost:8081/api/supply/')
       .then(response => this.suppliers=response.data) // creation de la promesse
       .catch()
 

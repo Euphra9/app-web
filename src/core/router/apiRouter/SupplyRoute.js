@@ -5,6 +5,9 @@ module.exports = app => {
 
 // Retrieve all Suppliers
 router.get("/", supply.findAllSupplier);
+
+  // Create a new delivery
+router.post("/", supply.create);
     
 app.use('/api/supply', router);
   };

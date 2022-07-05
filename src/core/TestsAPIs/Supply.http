@@ -1,2 +1,14 @@
-// affichage de l'ensemble des Etudiants
+// affichage de l'ensemble des fournisseurs
 GET http://localhost:8081/api/supply
+
+###
+//ajout d'une livraison
+POST http://localhost:8081/api/supply
+Content-Type: application/json
+
+{
+        "CodeBarre":4,
+        "DateAchat":"2002-06-12",
+        "PrixAchat":354,
+        "NumFournisseur":1
+}
