@@ -1,5 +1,5 @@
 <template>
-<h1> Modification du materiel :  {{material.Nom}} </h1>
+<h1> Modification du materiel :  {{name}} </h1>
 <button> Fiche produit </button>
 
 <div class="update">
@@ -23,21 +23,30 @@
 
    <div>
     <label for="type">Type </label><br/>
-    <select id="type" name="type">
-    <option value="init" selected> </option>
-    <option value="info">Informatique</option>
-    <option value="elect">Electronique</option>
+    <select id="type" name="type" v-model="material.Type">
+    <option  selected> </option>
+    <option >Informatique</option>
+    <option >Electronique</option>
     </select>
    </div>
 
-   <div>
+  <div>
       <label for="dateAchat" >Date achat </label> <br/>
+      <input type="date" id="dateAchat" name="dateAchat"
+       min="2000-01-01" max="3000-01-01" >
    </div>
    <div>
       <label for="prixAchat" >Prix Achat </label> <br/>
+      <input type="number" id="prixAchat" name="prixAchat" min="0" >
    </div>
-   <div>
+     <div>
       <label for="fournisseur" >Fournisseur </label> <br/>
+      <select id="fournisseur" name="type" v-model="material.Fournisseur">
+      <option></option>
+         <option  v-for="supplier in suppliers" :key="supplier.NumFournisseur"> 
+         {{supplier.NumFournisseur}} - {{supplier.Nom}}
+         </option>
+    </select>
    </div>
    
 
@@ -61,36 +70,38 @@ export default{
     return {
       id:this.$route.params.id,
       material:{},
-      name: this.material,
-      newname : "",
-      updateMaterial: [
-        {
-            name:"Hello",
-           
-        }
-      ],
+      supplier:{},
+      name:"",
+      suppliers:{}
+
       
     };
-  },
-  methods :{
-    onValid: function(){
-      let nname = document.getElementById('newname').value
-      this.student.Nom = nname
-    }
   },
 
   created(){ // pour les appels backend
 
     axios.get('http://localhost:8081/api/materials/'+this.id)
-    .then(response => this.material=response.data) // creation de la promesse
+    .then(response => {
+      this.material=response.data
+      this.name=this.material.Nom;
+        
+
+      }) // creation de la promesse
+    .catch()
+
+
+    axios.get('http://localhost:8081/api/supply/')
+    .then(response => this.suppliers=response.data) // creation de la promesse
     .catch()
    
   },
 
-  mounted(){
-    console.log("ok");
+   methods :{
+    onValid: function(){
+      let nname = document.getElementById('newname').value
+      this.student.Nom = nname
+    }
   }
-
 
 };
 </script>

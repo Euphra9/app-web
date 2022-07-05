@@ -12,3 +12,10 @@ Content-Type: application/json
         "PrixAchat":354,
         "NumFournisseur":1
 }
+###
+// recherche d'une livraison  en fonction de son identifiant
+GET http://localhost:8081/api/supply/1
+
+###
+// recherche d'une livraison  en fonction de son identifiant
+GET http://localhost:8081/api/supply/supplier/1

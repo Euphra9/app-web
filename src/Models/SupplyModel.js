@@ -34,5 +34,42 @@ Supply.createSupply = (newSuppli, result) => {
   });
 };
 
+// Find a single Supply with a id
+Supply.findSupplyById = (id, result) => {
+  sql.query(`SELECT * FROM fournir WHERE CodeBarre = ${id}`, (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(err, null);
+      return;
+    }
+    if (res.length) {
+      console.log("found supply: ", res[0]);
+      result(null, res[0]);
+      return;
+    }
+    // not found Supply with the id
+    result({ kind: "not_found" }, null);
+  });
+};
+
+
+// Find a single Supplier with a id
+Supply.findSupplierById = (id, result) => {
+  sql.query(`SELECT * FROM Fournisseur WHERE NumFournisseur = ${id}`, (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(err, null);
+      return;
+    }
+    if (res.length) {
+      console.log("found supplier: ", res[0]);
+      result(null, res[0]);
+      return;
+    }
+    // not found Supply with the id
+    result({ kind: "not_found" }, null);
+  });
+};
+
 
 module.exports = Supply;
