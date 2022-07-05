@@ -11,7 +11,7 @@ import UpdateStudent from "@/components/Main/Students/UpdateStudent.vue";
 import ListLoan from "@/components/Main/Loan/ListLoan.vue";
 import AddLoan from "@/components/Main/Loan/AddLoan.vue";
 import UpdateLoan from "@/components/Main/Loan/UpdateLoan.vue";
-
+import Login from "@/components/Login/LoginPage.vue";
 
 const routes = [
   {
@@ -96,7 +96,13 @@ const routes = [
     name: "NavBar",
     component: NavBar,
     
-  }
+  },
+
+  {
+    path: "/authLogin",
+    name: "Login",
+    component: Login,
+  },
 ];
 
 const router = createRouter({
