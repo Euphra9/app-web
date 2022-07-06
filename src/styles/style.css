@@ -183,7 +183,7 @@ table,thead,td{
   border-color:#CD5C5C ;
 }
 
-.btn_update,.btn_valide,.bouton_update{
+.btn_update,.btn_valide,.bouton_update,#generateBC{
   width: 8vw;
   height: 4vh;
   background-color: #6FA8DC;
@@ -215,16 +215,6 @@ label{
   top: 5vw;
   left: 25vw;
   
-}
-
-.update form div{
-  position: relative;
-  top: -1vw;
-  font-size: 1vw;
-}
-.update input{
-  position: relative;
-  /* top:2vw; */
 }
 
 
@@ -323,14 +313,8 @@ input[checkbox]{
   width: 15vw;
 }
 
-textarea{
-  resize: none;
-  height: 10vh;
-  width: 13vw;
-  
-}
 
-/*STUDENT*/
+/* ADD STUDENT*/
 .formStudent form div{
   margin: 20px;
   position: relative;
@@ -403,4 +387,182 @@ textarea{
 .formStudent button{
   position: relative;
   top: 0;
+}
+
+/* UPDATE STUDENT */
+
+.updatetudent form div{
+  margin: 20px;
+  position: relative;
+  top:0;
+  padding:1vw;
+
+}
+
+
+.updatetudent form input, .formStudent form select{
+  position: relative;
+  top:0;
+  z-index: 200;
+}
+
+.updatetudent form label{
+  position: relative;
+  top:1vw;
+  z-index: 200;
+  font-size: 2vw;
+}
+
+.updatetudent #id{
+  position: relative;
+  left: -4vw;
+  width: 16vw;
+}
+
+
+.updatetudent #name{
+  position: relative;
+  left: -2vw;
+  width: 16vw;
+}
+
+.updatetudent #lastname{
+  position: relative;
+  left: -3.2vw;
+  width: 16vw;
+
+}
+
+.updatetudent #phonenum{
+  position: relative;
+  left: -4.5vw;
+  width: 16vw;
+
+}
+
+.updatetudent #email{
+  position: relative;
+  left: -2.2vw;
+  width: 16vw;
+
+}
+
+.updatetudent #promotion-class{
+  position: relative;
+  left: -1.8vw;
+  top:0;
+  text-align: center;
+
+}
+
+.updatetudent #promotion-cursus{
+  position: relative;
+  left: -1.5vw;
+  text-align: center;
+  top:0;
+
+}
+
+.updatetudent #promotion-spec{
+  position: relative;
+  left: -1.2vw;
+  text-align: center;
+  top:0;
+
+}
+
+.updatetudent button{
+  position: relative;
+  top: 0;
+}
+/* ADD MATERIAL*/
+
+.addMaterial form div{
+  margin: 20px;
+  position: relative;
+  top:2vw;
+  padding:0.3vw;
+
+}
+
+.addMaterial form input, .addMaterial form select,textarea{
+  position: relative;
+  top:-0.7vw;
+  z-index: 200;
+}
+.addMaterial form input{
+  width: 16vw;
+
+}
+.addMaterial form label{
+  position: relative;
+  top:0;
+  z-index: 200;
+  font-size: 2vw;
+}
+
+
+textarea{
+  resize: none;
+  height: 10vh;
+  width: 16vw;
+  font-size: 1vw;  
+}
+
+#generateBC{
+  position: relative;
+  top:-37.7vw;
+  left:16vw;
+  z-index: 200;
+
+}
+
+.addMaterial #codeBarre{
+  position: relative;
+  left: -2vw;
+  width: 16vw;
+}
+
+.addMaterial #name{
+  position: relative;
+  left: 0.7vw;
+  width: 16vw;
+}
+
+.addMaterial #description{
+  position: relative;
+  left: -1.9vw;
+}
+
+.addMaterial #type,.addMaterial #fournisseur{
+  width: 16vw;
+  text-align: center;
+}
+
+.addMaterial #type{
+  position: relative;
+  left: 1.2vw;
+}
+.addMaterial #fournisseur{
+  position: relative;
+  left: -1.5vw;
+}
+
+.addMaterial #dateAchat{
+  position: relative;
+  left: -1.3vw;
+  text-align: center;
+
+}
+
+.addMaterial #prixAchat{
+  position: relative;
+  left: -1.1vw;
+  text-align: center;
+
+}
+
+.addMaterial .bouton_update{
+  position: relative;
+  top:0;
 }

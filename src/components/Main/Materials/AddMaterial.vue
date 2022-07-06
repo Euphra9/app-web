@@ -1,6 +1,6 @@
 <template>
 <h1> Ajout d'un produit  </h1>
-<div class="update">
+<div class="addMaterial">
   <form> 
     <div>
      <label for="codeBarre">Code Barre </label> <br/>
@@ -10,7 +10,7 @@
 
    <div>
         <label for="newname" >Nom </label> <br/>
-        <input type="text" id="newname" name="newname" v-model="newMaterial.Nom">
+        <input type="text" id="name" name="name" v-model="newMaterial.Nom">
     </div>
 
      <div>
@@ -54,7 +54,7 @@
 </div>
   </form> 
 
-  <button @click="generateBarcode"> Générer un code barre </button>
+  <button @click="generateBarcode" id="generateBC"> Générer </button>
 </div>
 
 

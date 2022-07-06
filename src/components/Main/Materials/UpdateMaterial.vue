@@ -1,8 +1,7 @@
 <template>
 <h1> Modification du materiel :  {{name}} </h1>
-<button> Fiche produit </button>
 
-<div class="update">
+<div class="addMaterial">
 <form >
     <div>
      <label for="codeBarre">Code Barre </label> <br/>
@@ -10,8 +9,8 @@
     </div>
 
    <div>
-        <label for="newname" >Nom </label> <br/>
-        <input type="text" id="newname" name="newname" :value="material.Nom" >
+        <label for="name" >Nom </label> <br/>
+        <input type="text" id="name" name="name" :value="material.Nom" >
     </div>
 
      <div>
@@ -49,14 +48,15 @@
     </select>
    </div>
    
-
-
-   
-</form>
-</div>
 <div >
         <button class="bouton_update" @click="updateMaterial" >Valider </button>
-  </div>
+</div>
+</form>
+  <button id="generateBC"> Fiche produit </button>
+
+</div>
+
+
 
 
 

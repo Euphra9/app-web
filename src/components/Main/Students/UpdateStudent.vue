@@ -1,7 +1,7 @@
 <template>
 <h1> Modification de l'étudiant :  {{identity.name}} {{student.Prenom}} </h1>
 
-<div class="update">
+<div class="updatetudent">
 <form >
     <div>
      <label for="id">Identifiant </label> <br/>
@@ -10,7 +10,7 @@
 
    <div>
         <label for="newname" >Nom </label> <br/>
-        <input type="text" id="newname" name="newname" v-model="student.Nom">
+        <input type="text" id="name" name="name" v-model="student.Nom">
     </div>
 
      <div>
