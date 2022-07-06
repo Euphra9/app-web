@@ -1,7 +1,6 @@
 
 body{
   overflow-x: hidden;
-  background-size: 100% 100%;
   font-family: Helvetica, serif;
   background-color: unset;
 
@@ -118,9 +117,10 @@ h1{
 .mainBlock table{
   position: relative;
   top:2vw;
-  left: 11vw;
+  left: -5vw;
   font-size: 1.2vw;
   column-width: 0.5vw;
+  margin: auto;
 
 /* Mettre flou
   -webkit-filter: blur(5px);
@@ -133,23 +133,29 @@ table,thead,td{
   border-bottom: 1px solid #333;
   border-collapse:collapse;
   padding: 2vw;
+  text-align :center;
+
 }
 
 .listStudents th{
   display: unset;
   position: relative;
-  right: 13vw;
+  right: 12vw;
   margin: auto;
   padding-left: 4.3vw;
+  text-align :center;
+
 
 }
 
 .listMaterials th{
   display: unset;
   position: relative;
-  right: 19vw;
+  right: 17vw;
    margin: auto;
   padding-left: 7vw;
+  text-align :center;
+
 
 }
 
@@ -159,6 +165,8 @@ table,thead,td{
   right: 7vw;
    margin: auto;
   padding-left: 5.5vw;
+  text-align :center;
+
 
 }
 
@@ -248,15 +256,9 @@ select{
   width: 7vw;
 }
 
-
-.add form div{
-  margin: 0vw;
-  display: block;
-  
-}
 .scroll{
   overflow-y: scroll;
-  max-height: 500px;
+  max-height: 700px;
   scroll-behavior: auto;
   overflow-x: hidden;
   
@@ -336,4 +338,11 @@ textarea{
   height: 10vh;
   width: 13vw;
   
+}
+/* STUDENT*/
+.formStudent form label{
+  color:red;
+  font-size:2vw;
+  gap:2vw;
+
 }
