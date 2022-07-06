@@ -22,6 +22,7 @@ require("./src/core/router/apiRouter/StudentsRoute")(app);
 require("./src/core/router/apiRouter/MaterialsRoute")(app);
 require("./src/core/router/apiRouter/LoanRoute")(app);
 require("./src/core/router/apiRouter/SupplyRoute")(app);
+require("./src/core/router/apiRouter/StatisticRoute")(app);
 
 
 app.listen(PORT, () => {

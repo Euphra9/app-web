@@ -1,0 +1,19 @@
+// affichage de l'ensemble des materials
+GET http://localhost:8081/api/statistic/allMaterial
+
+###
+
+// affichage de l'ensemble des prets
+GET http://localhost:8081/api/statistic/allLoan
+
+
+###
+
+// affichage de l'ensemble des pret retournés
+GET http://localhost:8081/api/statistic/allLoan/return
+
+
+###
+
+// affichage de l'ensemble des pret retournés
+GET http://localhost:8081/api/statistic/allLoan/notreturn
