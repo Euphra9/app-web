@@ -237,18 +237,8 @@ label{
 
 }
 
-input,select {
-  padding: 10px 20px;
-  margin: 0;
-  font-size: 1vw;
-  
-}
-input{
-  width: 10vw;
-  position: relative;
-  top:1vw;
-  left:0vw;
-}
+
+
 select{
   position: relative;
   top:1vw;
@@ -339,10 +329,78 @@ textarea{
   width: 13vw;
   
 }
-/* STUDENT*/
-.formStudent form label{
-  color:red;
-  font-size:2vw;
-  gap:2vw;
 
+/*STUDENT*/
+.formStudent form div{
+  margin: 20px;
+  position: relative;
+  top:5vw;
+  padding:1vw;
+
+}
+
+.formStudent form input, .formStudent form select{
+  position: relative;
+  top:0;
+  z-index: 200;
+}
+
+.formStudent form label{
+  position: relative;
+  top:1vw;
+  z-index: 200;
+  font-size: 2vw;
+}
+
+.formStudent #name{
+  position: relative;
+  left: -2vw;
+  width: 16vw;
+}
+
+.formStudent #lastname{
+  position: relative;
+  left: -3.2vw;
+  width: 16vw;
+
+}
+
+.formStudent #phonenum{
+  position: relative;
+  left: -4.5vw;
+  width: 16vw;
+
+}
+
+.formStudent #email{
+  position: relative;
+  left: -2.2vw;
+  width: 16vw;
+
+}
+
+.formStudent #promotion-class{
+  position: relative;
+  left: -1.8vw;
+  text-align: center;
+
+}
+
+.formStudent #promotion-cursus{
+  position: relative;
+  left: -1.5vw;
+  text-align: center;
+
+}
+
+.formStudent #promotion-spec{
+  position: relative;
+  left: -1.2vw;
+  text-align: center;
+
+}
+
+.formStudent button{
+  position: relative;
+  top: 0;
 }
