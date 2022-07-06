@@ -3,6 +3,7 @@ body{
   overflow-x: hidden;
   font-family: Helvetica, serif;
   background-color: unset;
+  background-size: auto;
 
 }
 
@@ -118,7 +119,7 @@ h1{
   position: relative;
   top:2vw;
   left: -5vw;
-  font-size: 1.2vw;
+  font-size: 1.5vw;
   column-width: 0.5vw;
   margin: auto;
 
@@ -135,6 +136,9 @@ table,thead,td{
   padding: 2vw;
   text-align :center;
 
+}
+th,td{
+  font-size: 1.3vw;
 }
 
 .listStudents th{
@@ -254,7 +258,7 @@ select{
   z-index: 200;
   border: 2vw;
   background-color: white;
-  font-size: 1.5vw;
+  font-size: 2.5vw;
   padding: 3vw;
 
   
@@ -262,7 +266,7 @@ select{
 
 .b_dialog button{
   position: relative;
-  top: 4vw;
+  top: 0;
  
 }
 
@@ -565,4 +569,55 @@ textarea{
 .addMaterial .bouton_update{
   position: relative;
   top:0;
+}
+
+/*PRET*/
+
+.gestionLoan form div{
+  margin: 20px;
+  position: relative;
+  top:5vw;
+  padding:0.3vw;
+
+}
+
+.gestionLoan form input, .gestionLoan form select{
+  position: relative;
+  top:-0.5vw;
+  z-index: 200;
+}
+
+.gestionLoan form label{
+  position: relative;
+  top:0.5vw;
+  z-index: 200;
+  font-size: 2vw;
+}
+.gestionLoan select{
+  width: 16vw;
+  text-align: center;
+}
+.gestionLoan #material{
+ position: relative;
+ left: -1.2vw;
+}
+
+.gestionLoan #student{
+  position: relative;
+  left: -1vw;
+ }
+
+#rendu{
+  transform: scale(5);
+  position: relative;
+  left:-7.5vw;
+  top:1vw;
+}
+
+#rendu:focus{
+  outline: none;
+}
+input[type=checkbox]:checked + label {
+  background-color: red;
+
 }

@@ -1,11 +1,11 @@
 <template>
 <h1> Ajout d'un prêt  </h1>
 
-<div class="update">
+<div class="gestionLoan">
 <form >
     <div>
      <label for="material">Materiel</label> <br/>
-     <select id="material" name="type" v-model="newLoan.material">
+     <select id="material" name="material" v-model="newLoan.material">
      <option value="init" selected> </option>
      <option  v-for="material in availableMaterials" :key="material.CodeBarre"> 
          {{material.CodeBarre+" - "+material.Nom}}
@@ -17,7 +17,7 @@
 
    <div>
         <label for="student" >Preteur </label> <br/>
-        <select id="student" name="type" v-model="newLoan.student">
+        <select id="student" name="student" v-model="newLoan.student">
             <option></option>
          <option  v-for="student in students" :key="student.Identifiant"> 
          {{student.Identifiant}} - {{student.Nom}}   {{student.Prenom}}
@@ -27,7 +27,7 @@
     </div>
 
      <div>
-        <label for="description" >Description </label><br/>
+        <label for="description" >Motif </label><br/>
         <textarea v-model="newLoan.motif"></textarea>
        
     </div>

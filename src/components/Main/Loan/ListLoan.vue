@@ -4,7 +4,7 @@
   <table style="width: 3vw;" class="listLoans">
     <thead>
       <tr>
-        <th>Date du prêt</th>
+        <th>Date</th>
         <th>Matériel</th>
         <th>Preteur</th>
         <th>Etat</th>

@@ -8,7 +8,7 @@
   <table style="width: 3vw;"  class="listMaterials" id="l_table">
     <thead>
     <tr>
-      <th>Code barre</th>
+      <th>Code</th>
       <th>Nom</th>
       <th>Description</th>
       <th>Type</th>

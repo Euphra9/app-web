@@ -1,17 +1,17 @@
 <template>
 <h1> Mis à jour du prêt réalisé par {{student.Prenom+" "+student.Nom}} </h1>
 
-<div class="update">
+<div class="gestionLoan">
 <form >
     <div>
      <label for="material">Materiel</label> <br/>
-     <input id="material" name="material" readonly  v-model="material.Nom" >
+     <input id="material" name="material" readonly  v-model="material.Nom" style="position: relative; left:-1.5vw;">
 
     </div>
 
    <div>
         <label for="emprunt">Emprunteur </label> <br/>
-     <input id="emprunt" name="emprunt" readonly  v-model="student.Nom" >
+     <input id="emprunt" name="emprunt" readonly  v-model="student.Nom" style="position: relative; left:-2.7vw;" >
     </div>
 
      <div>
