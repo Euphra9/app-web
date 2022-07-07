@@ -6,6 +6,9 @@ body{
   background-size: auto;
 
 }
+p,label{
+  font-size: 1vw;
+}
 
  /* HEADER */
  .headerBar{
@@ -319,21 +322,21 @@ input[checkbox]{
 
 
 /* ADD STUDENT*/
-.formStudent form div{
+.formStudent div{
   margin: 20px;
   position: relative;
-  top:5vw;
-  padding:1vw;
+  top:2vw;
+  padding:0.3vw;
 
 }
 
-.formStudent form input, .formStudent form select{
+.formStudent input, .formStudent select{
   position: relative;
   top:0;
   z-index: 200;
 }
 
-.formStudent form label{
+.formStudent label{
   position: relative;
   top:1vw;
   z-index: 200;
@@ -620,4 +623,12 @@ textarea{
 input[type=checkbox]:checked + label {
   background-color: red;
 
+}
+
+/*LABEL MESSGE*/
+.error{
+  color:red;
+  visibility: hidden;
+  position: relative;
+  top:-1vw;
 }

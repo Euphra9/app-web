@@ -47,11 +47,11 @@
          </option>
     </select>
    </div>
-   
+ </form>  
 <div >
         <button class="bouton_update" @click="updateMaterial" >Valider </button>
 </div>
-</form>
+
   <button id="generateBC"> Fiche produit </button>
 
 </div>

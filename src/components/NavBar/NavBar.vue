@@ -27,7 +27,7 @@
       </div>
 
     <div>
-       <img alt="statistic" src="../../assets/statistic.png"/>
+      <router-link to="/statistiques"> <img alt="statistic" src="../../assets/statistic.png"/></router-link>
      <p> Statistique</p>
     </div>
     </div>

@@ -12,6 +12,7 @@ import ListLoan from "@/components/Main/Loan/ListLoan.vue";
 import AddLoan from "@/components/Main/Loan/AddLoan.vue";
 import UpdateLoan from "@/components/Main/Loan/UpdateLoan.vue";
 import Login from "@/components/Login/LoginPage.vue";
+import StatisticPage from "@/components/Main/Statistic/StatisticPage.vue"
 
 const routes = [
   {
@@ -85,6 +86,12 @@ const routes = [
         path: "/pret/:id",
         name: "UpdateLoan",
         component: UpdateLoan,
+        
+      },
+      {
+        path: "/statistiques",
+        name: "StatisticPage",
+        component: StatisticPage,
         
       }
     ]
