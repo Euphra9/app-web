@@ -1,17 +1,15 @@
 <template>
-
+<LoginPage/>
   <router-view></router-view>
 </template>
 
 <script>
-//import LoginPage from './components/Login/LoginPage.vue';
-/* Ecrire une fonction d'authentification
-  SI la personne se connecte activer ->  <routerView></routerView>  */
+import LoginPage from './components/Login/LoginPage.vue';
 
 export default {
   name: 'App',
   components: {
-    //LoginPage
+    LoginPage
 }
 }
 </script>

@@ -37,6 +37,38 @@ app.use(express.static(__dirname));
 // cookie parser middleware
 app.use(cookieParser());
 
+//username and password
+const myusername = "Select AdresseMail from Responsable"
+const mypassword = "Select MotDePAsse from Responsable"
+
+// a variable to save a session
+var session;
+
+app.get('/',(req,res) => {
+    session=req.session;
+    if(session.userid){
+        res.send("Welcome User <a href='/logout'>click to logout</a>");
+    }else
+        res.sendFile('components/Login/LoginPage',{root:__dirname})
+});
+
+app.post('/authLogin',(req,res) => {
+    if(req.body.username === myusername && req.body.password === mypassword){
+        session=req.session;
+        session.userid=req.body.username;
+        console.log(req.session)
+        res.send(`Hey there, welcome <a href='/logout'>click to logout</a>`);
+    }
+    else{
+        res.send('Invalid username or password');
+    }
+})
+
+app.get('/logout',(req,res) => {
+    req.session.destroy();
+    res.redirect('/');
+});
+
 // set port, listen for requests
 const PORT = process.env.PORT || 8081;
 require("./src/core/router/StudentsRoute")(app);

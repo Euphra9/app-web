@@ -50,9 +50,10 @@ export default {
           //location.reload();
 
           this.$router.push('/');
-          //return res.redirect('/components/AppPage.vue')
+
         } else {
           document.getElementById("error").style.visibility = "visible";
+          //alert("----------> Login or password Incorrect")
         }
       }
     },
